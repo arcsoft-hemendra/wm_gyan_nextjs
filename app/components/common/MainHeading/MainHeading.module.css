@@ -1,0 +1,21 @@
+.headingContainer {
+  position: relative;
+}
+.heading {
+  color: #ffffff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: normal;
+  text-align: left;
+  margin: 1rem 0 0 0;
+  font-family: "hp-simplified";
+  font-weight: 700;
+}
+.bottomDivider {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  background: #f96332;
+  width: 35px;
+  height: 6px;
+}

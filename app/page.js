@@ -2,6 +2,7 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import Navbar from "./components/Navbar/Navbar";
 import { getServerSideProps } from "next";
 import VideoCard from "./components/common/VideoCard/VideoCard";
+import MainHeading from "./components/common/MainHeading/MainHeading";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         // }
         storyHeading={"Heading of the story"}
       />
+      <MainHeading title={"GYAN VIDEOS"}/>
     </main>
   );
 }

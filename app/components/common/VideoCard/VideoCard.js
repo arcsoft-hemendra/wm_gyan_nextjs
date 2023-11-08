@@ -1,14 +1,12 @@
+"use client";
 import React from "react";
-
 import style from "./VideoCard.module.css";
 
 const VideoCard = (props) => {
   return (
     <div key={props?.index}>
       <section
-        // onClick={() => {
-        //   handlePush(item);
-        // }}
+        onClick={() => props.onClick()}
         className={style.mainCardSection}
       >
         <img
@@ -20,7 +18,7 @@ const VideoCard = (props) => {
           <i className={`icon icon-play ${style.playIcon}`} />
         </div>
       </section>
-      {<p className={style.heading}>{props?.storyHeading}</p>}
+      <p className={style.heading}>{props?.storyHeading}</p>
     </div>
   );
 };
