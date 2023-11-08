@@ -1,10 +1,9 @@
 import React from 'react'
-import style from './Navbar.module.css'
-import Image from 'next/image'
+import style from './Navbar.module.css' 
 
 const Navbar = () => {
   return (
-    <div>
+  
       <div className={style.navcontainer}>
         <div className={style.header}>
           <a className={style.headlogo} href="/">
@@ -34,7 +33,7 @@ const Navbar = () => {
 
         </div>
       </div>
-      </div>
+   
     
   )
 }
