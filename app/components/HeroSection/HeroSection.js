@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import VideoJS from "../common/VideoJS";
+import VideoJS from "../common/VideoJS/VideoJS";
 
 import { youngstarVideo, karmyogisVideo } from "./HeroSectionData";
 import style from "./HeroSection.module.css";

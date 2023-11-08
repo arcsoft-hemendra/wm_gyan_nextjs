@@ -1,0 +1,53 @@
+.mainCardSection {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.3);
+}
+.mainCardSection::before {
+  content: "";
+  padding-top: 56.25%;
+  display: block;
+}
+.mainCardSection:hover .playIconContainer {
+  display: block;
+}
+
+.mainCardImage {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.playIconContainer {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.playIcon {
+  font-size: 1.3em;
+  border: 0;
+  color: white;
+}
+
+.heading {
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .playIconContainer {
+    display: none !important;
+  }
+}
