@@ -1,4 +1,5 @@
 import './globals.css'
+import '../public/fonts.css'
 
 export const metadata = {
   title: 'Bharat ke Apne Gyan Guru: Learn new skills, knowledge & grow your career',
