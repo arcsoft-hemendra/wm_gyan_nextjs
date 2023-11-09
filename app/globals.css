@@ -14,6 +14,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  text-align: center;
 }
 
 audio,
@@ -182,6 +183,24 @@ video {
 
 /* FONTELLO ENDS */
 
+/* VIDEOJS CSS STARTS */
+
+.video-js {
+  width: 100%;
+}
+.video-js .vjs-tech {
+  position: unset !important;
+}
+.video-js {
+  background-color: transparent !important;
+}
+.video-js .vjs-control-bar {
+  bottom: 5px !important;
+  background-color: transparent !important;
+}
+.video-js .vjs-big-play-button {
+  display: none !important;
+}
 
 /* DROPDOWN CSS STARTS */
 

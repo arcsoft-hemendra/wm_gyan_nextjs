@@ -1,14 +1,12 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import style from "./VideoCard.module.css";
 
 const VideoCard = (props) => {
   return (
-    <div key={props?.index}>
-      <section
-        onClick={() => props.onClick()}
-        className={style.mainCardSection}
-      >
+    <Link key={props?.index} href={props.slug}>
+      <section className={style.mainCardSection}>
         <img
           className={style.mainCardImage}
           src={props?.video_landscape_thumb}
@@ -19,7 +17,7 @@ const VideoCard = (props) => {
         </div>
       </section>
       <p className={style.heading}>{props?.storyHeading}</p>
-    </div>
+    </Link>
   );
 };
 
