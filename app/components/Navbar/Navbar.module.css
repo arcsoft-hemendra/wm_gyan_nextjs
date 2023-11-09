@@ -1,105 +1,163 @@
- .navcontainer{
-    background: #1c1c1c;
-    position: relative;
+ .navcontainer {
+     background: #1c1c1c;
+     position: relative;
  }
 
- .header{
-    background: transparent none repeat 0 0/auto auto padding-box border-box scroll;
-    background: initial;
-    font-size: 20px;
-    left: 0;
-    padding: 0.5rem;
-    position: fixed;
-    right: 0;
-    top: 0;
-    transition: all .3s ease-in-out 0s;
-    z-index: 8;
+ .header {
+     background: transparent none repeat 0 0/auto auto padding-box border-box scroll;
+     background: initial;
+     font-size: 20px;
+     left: 0;
+     padding: 0.5rem;
+     position: fixed;
+     right: 0;
+     top: 0;
+     transition: all .3s ease-in-out 0s;
+     z-index: 8;
  }
 
- .headlogo{
-    left: 50%;
-    position: absolute; 
-    transform: translate(-50%);
+ .headlogo {
+     left: 50%;
+     position: absolute;
+     transform: translate(-50%);
  }
 
- .rightbtn{
-    align-items: center;
-    display: flex;
-    justify-content: end;
-    margin: auto 0;
+ .rightbtn {
+     align-items: center;
+     display: flex;
+     justify-content: end;
+     margin: auto 0;
  }
 
- .cat_icon, .search_icon {
-   
-    align-items: center;
-    background-image: url(https://cdn.workmob.com/stories_workmob/images/promotional/button-bg.png);
-    background-size: 99% 100%;
-    border-radius: 50%;
-    color: #d1d1d1;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    fill: #d1d1d1;
-    height: 1rem;
-    margin-left: 1rem;
-    padding: 0.4rem;
-    width: 1rem;
-}
+ .cat_icon,
+ .search_icon {
 
-.sharebtn{
-    background-image: url(https://cdn.workmob.com/stories_workmob/images/promotional/button-bg.png);
-    background-position: 50%;
-    border-radius: 30px;
-    box-shadow: 0 3px 6px #00000029;
-    color: #fff;
-    cursor: pointer;
-    font-family: Montserrat,sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    margin-left: 10px;
-    padding: 0.35rem 0.75rem;
-    text-decoration: none;
-    white-space: nowrap;
-}
+     align-items: center;
+     background-image: url(https://cdn.workmob.com/stories_workmob/images/promotional/button-bg.png);
+     background-size: 99% 100%;
+     border-radius: 50%;
+     color: #d1d1d1;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     fill: #d1d1d1;
+     height: 1rem;
+     margin-left: 0.6rem;
+     padding: 0.5rem;
+     width: 1rem;
+ }
 
-.navbarMain{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 72%;
-}
+ .sharebtn {
+     background-image: url(https://cdn.workmob.com/stories_workmob/images/promotional/button-bg.png);
+     background-position: 50%;
+     border-radius: 30px;
+     box-shadow: 0 3px 6px #00000029;
+     color: #fff;
+     cursor: pointer;
+     font-family: Montserrat, sans-serif;
+     font-size: 15px;
+     font-weight: 700;
+     margin-left: 10px;
+     padding: 0.35rem 0.75rem;
+     text-decoration: none;
+     white-space: nowrap;
+ }
 
-.head_tab{
-    margin-left: 8px;
-    white-space: nowrap;
-}
+ .navbarMain {
+     align-items: center;
+     display: flex;
+     justify-content: space-between;
+     margin: 0 auto;
+     width: 72%;
+ }
 
-.tab_data{
-    color: #fff;
-    font-family: hp-simplified, sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    margin: 0 20px;
-    text-decoration: none;
-}
+ .head_tab {
+     margin-left: 8px;
+     white-space: nowrap;
+ }
 
-.active_tab{
-    position: relative;
-    color: #f96332;
-    font-weight: 700;
-}
+ .tab_data {
+     color: #fff;
+     font-family: hp-simplified, sans-serif;
+     font-size: 18px;
+     font-weight: 700;
+     margin: 0 20px;
+     text-decoration: none;
+ }
 
-.active_tab::after{
-    border-bottom: 6px solid #f96332;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    bottom: -10px;
-    content: "";
-    height: 0;
-    left: 45px;
-    position: absolute;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    width: 0;
-}
+ .active_tab {
+     position: relative;
+     color: #f96332;
+     font-weight: 700;
+ }
+
+ .active_tab::after {
+     border-bottom: 6px solid #f96332;
+     border-left: 6px solid transparent;
+     border-right: 6px solid transparent;
+     bottom: -10px;
+     content: "";
+     height: 0;
+     left: 45px;
+     position: absolute;
+     transform: translateX(-50%);
+     -webkit-transform: translateX(-50%);
+     width: 0;
+ }
+
+ .dropdown_mobile {
+     display: none;
+ }
+
+ @media (max-width: 992px) {
+     .navbarMain {
+         width: 100%;
+     }
+
+     .headlogo img {
+         width: 9rem;
+     }
+ }
+
+ /* For mobile */
+
+ @media (max-width: 767px) {
+     .navcontainer {
+         margin-bottom: 10px;
+     }
+
+     .header {
+         background: black !important;
+     }
+
+     .navbarMain {
+         align-items: center;
+         width: 100%;
+     }
+
+     .tab_data {
+         display: none;
+     }
+
+     .headlogo img {
+        margin-top: -0.5rem;
+         width: 7rem;
+     }
+
+     .rightbtn {
+         margin: 0 9px;
+     }
+
+     .sharebtn,
+     .cat_icon {
+         display: none;
+     }     
+     .search_icon{
+        height: 13px;
+        padding: 7px;
+        width: 13px;    
+     }
+     .dropdown_mobile {
+         display: block;
+     }
+ }

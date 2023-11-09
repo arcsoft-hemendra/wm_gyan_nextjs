@@ -92,58 +92,94 @@ video {
 
 .icon-cancel::before {
   content: "\e800";
-} /* '' */
+}
+
+/* '' */
 .icon-location::before {
   content: "\e801";
-} /* '' */
+}
+
+/* '' */
 .icon-right-arrow::before {
   content: "\e802";
-} /* '' */
+}
+
+/* '' */
 .icon-headphones::before {
   content: "\e803";
-} /* '' */
+}
+
+/* '' */
 .icon-heart-filled::before {
   content: "\e804";
-} /* '' */
+}
+
+/* '' */
 .icon-company::before {
   content: "\e805";
-} /* '' */
+}
+
+/* '' */
 .icon-plus::before {
   content: "\e806";
-} /* '' */
+}
+
+/* '' */
 .icon-mute::before {
   content: "\e807";
-} /* '' */
+}
+
+/* '' */
 .icon-play::before {
   content: "\e808";
-} /* '' */
+}
+
+/* '' */
 .icon-pause-1::before {
   content: "\e809";
-} /* '' */
+}
+
+/* '' */
 .icon-unmute::before {
   content: "\e80a";
-} /* '' */
+}
+
+/* '' */
 .icon-headphone-symbol::before {
   content: "\e80b";
-} /* '' */
+}
+
+/* '' */
 .icon-share::before {
   content: "\e80c";
-} /* '' */
+}
+
+/* '' */
 .icon-spin5::before {
   content: "\e838";
-} /* '' */
+}
+
+/* '' */
 .icon-down-open::before {
   content: "\f004";
-} /* '' */
+}
+
+/* '' */
 .icon-up-open::before {
   content: "\f005";
-} /* '' */
+}
+
+/* '' */
 .icon-right-open::before {
   content: "\f006";
-} /* '' */
+}
+
+/* '' */
 .icon-left-open::before {
   content: "\f007";
-} /* '' */
+}
+
+/* '' */
 
 /* FONTELLO ENDS */
 
@@ -165,3 +201,46 @@ video {
 .video-js .vjs-big-play-button {
   display: none !important;
 }
+
+/* DROPDOWN CSS STARTS */
+
+@media (max-width: 767px) {
+.Dropdown-control {
+  background: none !important ;
+  border: none  !important;
+  padding: 0  !important;
+  overflow: unset  !important;
+  font-size: 14px  !important;
+  color: #f96332  !important;
+  font-weight: bold  !important;
+  text-transform: uppercase  !important;
+}
+
+.Dropdown-arrow {
+  border-color: #f96332 transparent transparent  !important;
+  top: 8px  !important;
+  right: -15% !important;
+}
+
+
+.Dropdown-menu {
+  background-color: #000  !important;
+  width: auto  !important;
+  text-transform: uppercase  !important;
+  text-align: left  !important;
+  top: 30px  !important;
+  border: 1px solid #ffffff7a  !important;
+}
+
+.Dropdown-option.is-selected {
+  background-color: black  !important;
+  color: #f96332  !important;
+}
+
+.Dropdown-option {
+  font-size: 16px  !important;
+  color: #fff  !important;
+  border-bottom: 1px solid #ffffff5c  !important;
+  padding: 8px 35px 8px 10px  !important;
+}}
+/* DROPDOWN CSS ENDS */
