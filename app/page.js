@@ -9,13 +9,13 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <VideoCard
+      {/* <VideoCard
         index="1"
-        // video_landscape_thumb={
-        //   "https://cdn.workmob.com/stories_workmob/images/stories/videos-thumb-gyan-landscape/kiran-soni-learn-about-career-in-yoga-landscape-thumb.jpg"
-        // }
+        video_landscape_thumb={
+          "https://cdn.workmob.com/stories_workmob/images/stories/videos-thumb-gyan-landscape/kiran-soni-learn-about-career-in-yoga-landscape-thumb.jpg"
+        }
         storyHeading={"Heading of the story"}
-      />
+      /> */}
       <MainHeading title={"GYAN VIDEOS"}/>
     </main>
   );

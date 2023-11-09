@@ -1,10 +1,15 @@
 "use client";
 import React, { useEffect } from 'react'
+import '../../globals.css';
 import style from './Navbar.module.css'
 import { useRef } from 'react'
 import { WorkmobLogo } from './NavBarData';
-
+import Dropdown from 'react-dropdown';
+import Link from 'next/link';
+import 'react-dropdown/style.css';
 const Navbar = () => {
+  const defaultOption = 'KARMYOGIS'
+  const options = ['KARMYOGIS', 'YOUNGSTARS']
   const headerRef = useRef();
 
   useEffect(() => {
@@ -37,12 +42,15 @@ const Navbar = () => {
         </a>
         <nav className={style.navbarMain}>
           <div className={style.head_tab}>
-            <a className={`${style.tab_data} ${style.active_tab}`} href="/">
+            <Link className={`${style.tab_data} ${style.active_tab}`} href="/">
               KARMYOGIS
-            </a>
-            <a className={style.tab_data} href="/">
+            </Link>
+            <Link className={style.tab_data} href="/">
               YOUNGSTARS
-            </a>
+            </Link>
+            <Dropdown className={style.dropdown_mobile} options={options} value={defaultOption}
+             placeholder="Select an option" />
+        
           </div>
           <div className={style.rightbtn}>
             <div className={style.cat_icon}>
@@ -59,4 +67,5 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
+
