@@ -1,4 +1,4 @@
-import './globals.css'
+// import './globals.css' 
 
 export const metadata = {
   title: 'Bharat ke Apne Gyan Guru: Learn new skills, knowledge & grow your career',
