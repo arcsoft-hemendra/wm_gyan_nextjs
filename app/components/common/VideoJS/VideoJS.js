@@ -1,11 +1,13 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect ,useRef} from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
+import { usePathname } from 'next/navigation'
 
 export const VideoJS = (props) => {
-  const videoRef = React.useRef(null);
-  const playerRef = React.useRef(null);
+  const videoRef = useRef(null);
+  const playerRef = useRef(null);
+  const pathname = usePathname()
   const { options, onReady, videoProps } = props;
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export const VideoJS = (props) => {
         onReady && onReady(player);
       }));
     }
-  }, [options, videoRef]);
+  }, [options, videoRef,pathname]);
 
   // Dispose the Video.js player when the functional component unmounts
   useEffect(() => {
@@ -29,13 +31,13 @@ export const VideoJS = (props) => {
         playerRef.current = null;
       }
     };
-  }, [playerRef]);
+  }, [playerRef,pathname]);
 
   return (
     <div data-vjs-player>
       <video
         ref={videoRef}
-        className={`video-js vjs-big-play-centered ${props?.className}`}
+        className={`video-js vjs-default-skin vjs-big-play-centered ${props?.className}`}
         playsInline
         {...videoProps}
       />

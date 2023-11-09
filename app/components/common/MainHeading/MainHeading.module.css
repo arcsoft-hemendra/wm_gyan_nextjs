@@ -1,9 +1,12 @@
 .headingContainer {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .heading {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 2vw;
   text-transform: uppercase;
   line-height: normal;
   text-align: left;
@@ -13,9 +16,14 @@
 }
 .bottomDivider {
   position: absolute;
-  left: 0;
-  bottom: 0px;
+  left: 2px;
+  bottom: -8px;
   background: #f96332;
   width: 35px;
   height: 6px;
+}
+.iconArrow {
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.8;
 }
