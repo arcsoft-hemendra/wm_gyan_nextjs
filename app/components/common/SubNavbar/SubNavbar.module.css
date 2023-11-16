@@ -1,0 +1,88 @@
+.logoContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.logoImage {
+  width: 250px;
+}
+.discriptionContainer {
+  color: #f9d338;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.discription {
+  font-family: "hp-simplified";
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  margin: 0;
+}
+
+.mainSearchContainer {
+  margin: auto 1rem;
+}
+
+.searchContainer {
+  font-size: 1.6em;
+  width: 100%;
+  max-width: 700px;
+  padding: 0.5em 1em 0.5em 2.3em;
+  text-align: initial;
+  margin: 1.5rem auto;
+  background: #ffffff1f;
+  border-radius: 30px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  font-size: 19px;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  color: #6d6d6d;
+}
+
+.searchIcon::before {
+  font-weight: bold;
+}
+
+.InputBox {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .discriptionContainer {
+    padding: 10px 20px;
+  }
+  .discription {
+    font-size: 20px;
+    margin: 0;
+    line-height: 24px;
+  }
+  .searchContainer {
+    font-size: 1.25em;
+    width: auto;
+  }
+  .searchIcon {
+    left: 20px;
+  }
+}
