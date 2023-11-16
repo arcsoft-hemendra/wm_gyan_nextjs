@@ -244,3 +244,30 @@ video {
   padding: 8px 35px 8px 10px  !important;
 }}
 /* DROPDOWN CSS ENDS */
+
+/* For hide show STARTS */
+.hide{
+  display: none;
+}
+.show-d{
+  display: block;
+}
+
+/* Hide show ENDS */
+
+.indiana-scroll-container--hide-scrollbars{
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .indiana-scroll-container--hide-scrollbars{
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .hide-m{
+    display: none;
+  }
+  
+}

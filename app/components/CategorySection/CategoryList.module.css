@@ -1,0 +1,30 @@
+.headingContainer {
+    margin: 2rem 0;
+}
+
+.categorymain {
+    min-height: 0;
+    overflow: auto;
+    /* margin-top: 20px; */
+    width: 100%;
+}
+
+.categoryContainer {
+    display: flex;
+    margin: 0 auto 1rem;
+    width: 100%;
+}
+
+.categoryContainer>* {
+    flex: 1 1;
+}
+
+.loaderHeight {
+    height: 100px;
+}
+
+.loaderContainer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
