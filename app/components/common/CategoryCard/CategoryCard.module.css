@@ -1,0 +1,39 @@
+.category_d{
+    display: block;
+}
+.category_m{
+    display: none;
+}
+
+.cat_link{
+    border-radius: 1.1vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.cat_link::before{
+    content: "";
+    display: block;
+    padding-top: 70%;
+}
+
+.cat_link img{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+
+
+@media (max-width: 900px) {
+    .category_d{
+        display: none;
+    }
+    .category_m{
+        display: block;
+    }
+   
+}

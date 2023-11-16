@@ -3,18 +3,15 @@ import React from "react";
 import LoaderComponent from "../common/Loader/Loader";
 import MainHeading from "../common/MainHeading/MainHeading";
 import VideoCard from "../common/VideoCard/VideoCard";
-
 import style from "./HomeVideoList.module.css";
 
 const HomeVideoList = ({ data }) => {
   const videoList =
-    data.length < 12 && data.length > 7 ? data.slice(0, 8) : data.slice(0, 8);
+    data.length < 12 && data.length > 7 ? data.slice(0, 6) : data.slice(0, 12);
 
   return (
-    <div className="container">
-      <div className={style.headingContainer}>
-        <MainHeading title="Gyan Videos" />
-      </div>
+    <React.Fragment>
+      <MainHeading title="Gyan Videos" />
       <div className={style.videoListContainer}>
         {!data ? (
           <div className={style.loaderHeight}>
@@ -34,7 +31,7 @@ const HomeVideoList = ({ data }) => {
           })
         )}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

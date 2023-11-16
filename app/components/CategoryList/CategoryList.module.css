@@ -1,0 +1,37 @@
+.headingContainer {
+    margin: 2rem 0;
+}
+
+.categorymain {
+    min-height: 0;
+    overflow: auto; 
+    width: 100%;
+}
+
+.categoryContainer {
+    display: flex;
+    margin: 0 auto 1rem;
+    width: 100%;
+}
+
+.categoryContainer>* {
+    flex: 1 1;
+}
+
+.loaderHeight {
+    height: 100px;
+}
+
+.loaderContainer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+@media (max-width: 900px) {
+.mobile_link{
+    display: flex;  
+    justify-content: space-between;
+    margin-left: 1rem;
+}
+}
