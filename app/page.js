@@ -1,15 +1,14 @@
-import CategoryList from "./components/CategorySection/CategoryList";
+import CategoryList from "./components/CategoryList/CategoryList";
 import HeroSection from "./components/HeroSection/HeroSection";
 import HomeVideoList from "./components/HomeVideoList/HomeVideoList";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/common/Footer/Footer";
-import style from './page.module.css'
+import style from "./page.module.css";
 
 const URL = "https://cdn.workmob.com/stories_workmob";
 async function getVideosList() {
-
   const res = await fetch(`${URL}/config/gyan-stories-top.json`, {
-    cache: 'no-store',
+    cache: "no-store",
   });
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
@@ -20,7 +19,7 @@ async function getVideosList() {
 
 async function getCategoryList() {
   const res = await fetch(`${URL}/config/gyan-category.json`, {
-    cache: 'no-store',
+    cache: "no-store",
   });
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
@@ -37,10 +36,10 @@ export default async function Home() {
       <Navbar />
       <HeroSection />
       <div className={style.container}>
-      <HomeVideoList data={videoData} />
-      <CategoryList data={categoryData} URL={URL}/>
+        <HomeVideoList data={videoData} />
+        <CategoryList data={categoryData} />
       </div>
-      <Footer/>
+      <Footer />
     </main>
   );
 }

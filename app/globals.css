@@ -245,7 +245,7 @@ video {
 }}
 /* DROPDOWN CSS ENDS */
 
-/* For hide show STARTS */
+/* FOR HIDE SHOW STARTS */
 .hide{
   display: none;
 }
@@ -253,7 +253,7 @@ video {
   display: block;
 }
 
-/* Hide show ENDS */
+/* Hide SHOW ENDS */
 
 .indiana-scroll-container--hide-scrollbars{
   display: none;

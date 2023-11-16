@@ -51,19 +51,12 @@
 
 .footer_meriKahani img {
     width: 290px;
-}
-
-/* .Footer_karmayogiFestival {
-    width: 100%;
-    max-width: 33em;
-    margin-bottom: 0.5em;
-} */
+} 
 
 .footer_celebrating {
     font-size: 2em;
     font-weight: bold;
-    display: flex;
-    /* width: 300px; */
+    display: flex; 
     margin: 0.8rem auto;
     color: rgb(247 217 57);
     align-items: center;
@@ -71,8 +64,7 @@
 }
 
 .HomePageFooter-category {
-    margin-left: 0.3em;
-    /* transform: translateY(80%); */
+    margin-left: 0.3em; 
     white-space: nowrap;
 }
 
@@ -102,6 +94,27 @@
     font-size: 2.4em;
     font-weight: bold;
     margin: 0 0 0.5em;
+}
+.footer_text{
+    flex: 1 1 0%;
+    text-align: left;
+    color: white 
+}
+
+.footer_align_right{
+    text-align: right;
+}
+
+.orange{
+    color: rgb(249, 99, 50);
+}
+
+.white{
+    color: rgb(255, 255, 255);
+}
+
+.green{
+    color: rgb(18, 136, 7);
 }
 
 @media (max-width: 767px) {

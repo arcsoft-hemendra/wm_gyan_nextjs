@@ -35,12 +35,5 @@
     .category_m{
         display: block;
     }
-    .mobile_link{
-        display: flex;  
-        justify-content: space-between;
-        margin-left: 0.5rem;
-    }
-    .mobile_margin{
-        margin-left: 0.5rem;
-    }
+   
 }

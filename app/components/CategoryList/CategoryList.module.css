@@ -4,8 +4,7 @@
 
 .categorymain {
     min-height: 0;
-    overflow: auto;
-    /* margin-top: 20px; */
+    overflow: auto; 
     width: 100%;
 }
 
@@ -27,4 +26,12 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0px);
+}
+
+@media (max-width: 900px) {
+.mobile_link{
+    display: flex;  
+    justify-content: space-between;
+    margin-left: 1rem;
+}
 }

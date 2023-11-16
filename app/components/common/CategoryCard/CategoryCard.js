@@ -1,42 +1,26 @@
-import Link from 'next/link'
-import React from 'react'
-import style from './CategoryCard.module.css'
-import ScrollContainer from "react-indiana-drag-scroll";
+import Link from "next/link";
+import React from "react";
+import style from "./CategoryCard.module.css";
 
-const CategoryCard = ({ data, URL }) => {
-    return (
-        <React.Fragment>
-            {
-                data?.slice(0, 3)?.map((item, index) => (
-                    <Link key={index} href={`/categories/${item.category}`} className={`${style.cat_link} ${style.category_d}`} >
-                        <img
-                            className={style.catimage}
-                            src={`${URL}/images/gyan_category/${item.category}.png`}
-                            alt={`${item.category} imageIcon`}
-                        />
-                    </Link>
-                )
-                )
-            }
-            <ScrollContainer className={style.mobile_link}>
-                {
-                    data?.slice(0, 3)?.map((item, index) => ( 
-                        <div className={style.mobile_margin}>
-                            <Link key={index} href={`/categories/${item.category}`} className={`${style.cat_link_mobile} ${style.category_m}`} >
-                                <img
-                                    className={style.catimage}
-                                    src={`${URL}/images/gyan_category/${item.category}.png`}
-                                    alt={`${item.category} imageIcon`}
-                                />
-                            </Link> 
-                            </div>
-                    )
-                    )
-                }
-            </ScrollContainer>
+const CategoryCard = (props) => {
+  const URL = "https://cdn.workmob.com/stories_workmob";
+  return (
+    <Link
+      key={props.index}
+      href={`/categories/${props.category}`}
+      className={
+        props.type === "web"
+          ? `${style.category_d} ${style.cat_link}`
+          : `${style.category_m}  ${style.mobile_link}`
+      }
+    >
+      <img
+        className={style.catimage}
+        src={`${URL}/images/gyan_category/${props.category}.png`}
+        alt={`${props.category} imageIcon`}
+      />
+    </Link>
+  );
+};
 
-        </React.Fragment>
-    )
-}
-
-export default CategoryCard
+export default CategoryCard;

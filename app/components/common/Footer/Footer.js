@@ -2,6 +2,9 @@ import React from 'react'
 import style from './Footer.module.css';
 
 function Footer() {
+
+  const heart = "https://www.workmob.com/static/media/heart.33403302.svg"
+
   return (
     <div className={style.HomePageFooter}>
   <div className={style.footerMainContainer}>
@@ -21,23 +24,22 @@ function Footer() {
         एक नयी पहचान बनाएं।
       </p>
       <p className={style.footer_banaoApniPehchan}>
-        <span style={{ color: "rgb(249, 99, 50)" }}>बनाओ </span>
-        <span style={{ color: "rgb(255, 255, 255)" }}>अपनी </span>
-        <span style={{ color: "rgb(18, 136, 7)" }}>पहचान</span>
+        <span className={style.orange}>बनाओ </span>
+        <span className={style.white}>अपनी </span>
+        <span className={style.green}>पहचान</span>
       </p>
     </div>
   </div>
   <div className={style.bottomContent}>
     <p
-      className="hide-m"
-      style={{ flex: "1 1 0%", textAlign: "left", color: "white" }}
+      className={`${style.footer_text} hide-m`} 
     >
       Aapki Digital Pehchan
     </p>
     <p className={style.footer_madeWithLove}>
       <span>Made with</span>
       <img
-        src="https://www.workmob.com/static/media/heart.33403302.svg"
+        src={heart}
         alt="heart"
         width={12}
         height={12}
@@ -45,8 +47,7 @@ function Footer() {
       <span>in Bharat</span>
     </p>
     <p
-      className="hide-m"
-      style={{ flex: "1 1 0%", textAlign: "right", color: "white" }}
+      className={`${style.footer_text} ${style.footer_align_right} hide-m`} 
     >
       We can. India can.
     </p>
