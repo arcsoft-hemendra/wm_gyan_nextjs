@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import CategoryCard from "../common/CategoryCard/CategoryCard";
 import SubNavbar from "../common/SubNavbar/SubNavbar";
 import style from "./CategoryCardList.module.css";
 
@@ -22,15 +23,51 @@ const CategoryCardList = (props) => {
         onChange={setCategorySearch}
         value={categorySearch}
       />
-      {filteredCategoryData.length > 0 ? (
-        [...filteredCategoryData]
-          .reverse()
-          .map((category, index) => <div>adsdj</div>)
-      ) : (
-        <div className={style.noCategoryFound}>
-          <p>No Category Available.</p>
-        </div>
-      )}
+
+      <div>
+        {filteredCategoryData.length > 0 ? (
+          <div className={style.categoryMainContainer}>
+            <div
+              className={
+                style.categoriesFlex +
+                " " +
+                `${categorySearch.length === 0 ? " " : style.displayNone}`
+              }
+            >
+              {[...filteredCategoryData]
+                .reverse()
+                .slice(0, 5)
+                .map((category, index) => {
+                  return (
+                    <CategoryCard
+                      category={category.category}
+                      key={index}
+                      type={false}
+                    />
+                  );
+                })}
+            </div>
+            <div className={style.categoryContainer}>
+              {filteredCategoryData.length > 0
+                ? [...filteredCategoryData]
+                    .reverse()
+                    .slice(categorySearch.length != 0 ? 0 : 5)
+                    .map((category, index) => (
+                      <CategoryCard
+                        category={category.category}
+                        key={index}
+                        type={false}
+                      />
+                    ))
+                : null}
+            </div>
+          </div>
+        ) : (
+          <div className={style.noCategoryFound}>
+            <p>No Category Available.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

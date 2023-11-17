@@ -16,7 +16,11 @@ const VideoCard = (props) => {
           <i className={`icon icon-play ${style.playIcon}`} />
         </div>
       </section>
-      <p className={style.heading}>{props?.storyHeading}</p>
+      {
+        props?.storyHeading &&
+        <p className={style.heading}>{props?.storyHeading}</p>
+      }
+
     </Link>
   );
 };

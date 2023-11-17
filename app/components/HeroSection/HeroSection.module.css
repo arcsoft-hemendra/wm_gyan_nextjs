@@ -27,4 +27,7 @@
   .homeVideoContainerBackground {
     margin-top: 2.5rem;
   }
+  .homeVideoContainer {
+    margin-bottom: 10px;
+  }
 }
