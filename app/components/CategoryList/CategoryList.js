@@ -9,7 +9,7 @@ import CategoryCard from "../common/CategoryCard/CategoryCard";
 const CategoryList = ({ data }) => {
   return (
     <React.Fragment>
-      <MainHeading title="CATEGORIES" />
+      <MainHeading title="CATEGORIES" route="/categories" />
       <div className={style.categorymain}>
         <div className={style.categoryContainer}>
           {!data ? (
@@ -20,22 +20,28 @@ const CategoryList = ({ data }) => {
             </div>
           ) : (
             <>
-              {data?.reverse().slice(0, 3)?.map((item, index) => (
-                <CategoryCard
-                  category={item.category}
-                  index={index}
-                  type="web"
-                />
-              ))}
+              {data
+                ?.reverse()
+                .slice(0, 3)
+                ?.map((item, index) => (
+                  <CategoryCard
+                    category={item.category}
+                    index={index}
+                    type="web"
+                  />
+                ))}
               <ScrollContainer>
                 <div className={style.mobile_link}>
-                  {data?.reverse().slice(0, 3)?.map((item, index) => (
-                    <CategoryCard
-                      category={item.category}
-                      index={index}
-                      type="mobile"
-                    />
-                  ))}
+                  {data
+                    ?.reverse()
+                    .slice(0, 3)
+                    ?.map((item, index) => (
+                      <CategoryCard
+                        category={item.category}
+                        index={index}
+                        type="mobile"
+                      />
+                    ))}
                 </div>
               </ScrollContainer>
             </>
