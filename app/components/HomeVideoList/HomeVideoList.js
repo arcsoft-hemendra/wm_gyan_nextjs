@@ -11,7 +11,7 @@ const HomeVideoList = ({ data }) => {
 
   return (
     <React.Fragment>
-      <MainHeading title="Gyan Videos" />
+      <MainHeading title="Gyan Videos" route="/search" />
       <div className={style.videoListContainer}>
         {!data ? (
           <div className={style.loaderHeight}>  

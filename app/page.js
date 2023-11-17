@@ -4,7 +4,6 @@ import HomeVideoList from "./components/HomeVideoList/HomeVideoList";
 import InsightList from "./components/InsightList/InsightList";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/common/Footer/Footer";
-import style from "./page.module.css";
 
 const URL = "https://cdn.workmob.com/stories_workmob";
 async function getVideosList() {
@@ -52,7 +51,7 @@ export default async function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <div className={style.container}>
+      <div className="container">
         <HomeVideoList data={videoData} />
         <CategoryList data={categoryData} />
         <InsightList data={insightData} />

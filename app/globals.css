@@ -179,6 +179,10 @@ video {
   content: "\f007";
 }
 
+.bi-search::before {
+  content: "\f52a";
+}
+
 /* '' */
 
 /* FONTELLO ENDS */
@@ -205,69 +209,105 @@ video {
 /* DROPDOWN CSS STARTS */
 
 @media (max-width: 767px) {
-.Dropdown-control {
-  background: none !important ;
-  border: none  !important;
-  padding: 0  !important;
-  overflow: unset  !important;
-  font-size: 14px  !important;
-  color: #f96332  !important;
-  font-weight: bold  !important;
-  text-transform: uppercase  !important;
+  .Dropdown-control {
+    background: none !important ;
+    border: none !important;
+    padding: 0 !important;
+    overflow: unset !important;
+    font-size: 14px !important;
+    color: #f96332 !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+  }
+
+  .Dropdown-arrow {
+    border-color: #f96332 transparent transparent !important;
+    top: 8px !important;
+    right: -15% !important;
+  }
+
+  .Dropdown-menu {
+    background-color: #000 !important;
+    width: auto !important;
+    text-transform: uppercase !important;
+    text-align: left !important;
+    top: 30px !important;
+    border: 1px solid #ffffff7a !important;
+  }
+
+  .Dropdown-option.is-selected {
+    background-color: black !important;
+    color: #f96332 !important;
+  }
+
+  .Dropdown-option {
+    font-size: 16px !important;
+    color: #fff !important;
+    border-bottom: 1px solid #ffffff5c !important;
+    padding: 8px 35px 8px 10px !important;
+  }
 }
-
-.Dropdown-arrow {
-  border-color: #f96332 transparent transparent  !important;
-  top: 8px  !important;
-  right: -15% !important;
-}
-
-
-.Dropdown-menu {
-  background-color: #000  !important;
-  width: auto  !important;
-  text-transform: uppercase  !important;
-  text-align: left  !important;
-  top: 30px  !important;
-  border: 1px solid #ffffff7a  !important;
-}
-
-.Dropdown-option.is-selected {
-  background-color: black  !important;
-  color: #f96332  !important;
-}
-
-.Dropdown-option {
-  font-size: 16px  !important;
-  color: #fff  !important;
-  border-bottom: 1px solid #ffffff5c  !important;
-  padding: 8px 35px 8px 10px  !important;
-}}
 /* DROPDOWN CSS ENDS */
 
 /* FOR HIDE SHOW STARTS */
-.hide{
+.hide {
   display: none;
 }
-.show-d{
+.show-d {
   display: block;
 }
 
 /* Hide SHOW ENDS */
 
-.indiana-scroll-container--hide-scrollbars{
+.indiana-scroll-container--hide-scrollbars {
   display: none;
 }
 
 @media (max-width: 900px) {
-  .indiana-scroll-container--hide-scrollbars{
+  .indiana-scroll-container--hide-scrollbars {
     display: block;
   }
 }
 
 @media (max-width: 767px) {
-  .hide-m{
+  .hide-m {
     display: none;
   }
-  
+}
+
+/* CREATING COMMON CONTAINER */
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@media (min-width: 1100px) {
+  .container {
+    max-width: 1140px;
+    padding: 0;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
 }
