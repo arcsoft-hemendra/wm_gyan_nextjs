@@ -92,6 +92,7 @@ video {
 
 .icon-cancel::before {
   content: "\e800";
+  margin-left: 1px;
 }
 
 /* '' */
@@ -181,6 +182,10 @@ video {
 
 .bi-search::before {
   content: "\f52a";
+}
+
+.icon-cancel::before {
+  content: "\e800";
 }
 
 /* '' */

@@ -26,7 +26,7 @@ const CategoryList = ({ data }) => {
                 ?.map((item, index) => (
                   <CategoryCard
                     category={item.category}
-                    index={index}
+                    key={index}
                     type="web"
                   />
                 ))}
@@ -38,7 +38,7 @@ const CategoryList = ({ data }) => {
                     ?.map((item, index) => (
                       <CategoryCard
                         category={item.category}
-                        index={index}
+                        key={index}
                         type="mobile"
                       />
                     ))}
