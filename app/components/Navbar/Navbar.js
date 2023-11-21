@@ -75,7 +75,9 @@ const Navbar = () => {
                 </svg>
               </i>
             </Link>
-            <div className={style.sharebtn}>Share your Gyan</div>
+            <Link href="/share" className={style.shareLink}>
+              <div className={style.sharebtn}>Share your Gyan</div>
+            </Link>
           </div>
         </nav>
       </div>
