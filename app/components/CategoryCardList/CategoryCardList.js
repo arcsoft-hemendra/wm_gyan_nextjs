@@ -34,7 +34,7 @@ const CategoryCardList = (props) => {
                 `${categorySearch.length === 0 ? " " : style.displayNone}`
               }
             >
-              {[...filteredCategoryData]
+              {filteredCategoryData
                 .reverse()
                 .slice(0, 5)
                 .map((category, index) => {
@@ -49,7 +49,7 @@ const CategoryCardList = (props) => {
             </div>
             <div className={style.categoryContainer}>
               {filteredCategoryData.length > 0
-                ? [...filteredCategoryData]
+                ? filteredCategoryData
                     .reverse()
                     .slice(categorySearch.length != 0 ? 0 : 5)
                     .map((category, index) => (
