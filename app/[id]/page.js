@@ -23,8 +23,6 @@ async function getVideosDetail(userId) {
   const URL = "https://cdn.workmob.com/stories_workmob";
 
   // read route params
-  // const userId = params.id;
-
   const res = await fetch(`${URL}/config/gyan-story-detail/${userId}.json`, {
     cache: "no-store",
   });

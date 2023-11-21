@@ -2,8 +2,8 @@ import React from "react";
 import VideoJS from "../common/VideoJS/VideoJS";
 import style from "./StoryDetailPageVideoContainer.module.css";
 
-const StoryDetailPageVideoContainer = (props) => {
-  // console.log(props)
+const StoryDetailPageVideoContainer = ({ data }) => {
+
   return (
     <>
       <VideoJS
@@ -18,14 +18,13 @@ const StoryDetailPageVideoContainer = (props) => {
           preload: "auto",
           sources: [
             {
-              src: "https://cdn.workmob.com/stories_workmob/web_home/gyanmanch_youngstars/gyanmanch_youngstars.m3u8",
+              src: data.video_url_landscape,
               type: "application/x-mpegURL",
             },
           ],
         }}
         videoProps={{
-          poster:
-            "https://cdn.workmob.com/stories_workmob/web_home/gyanmanch_youngstars.jpg",
+          poster: data.video_landscape_thumb,
         }}
       />
     </>
