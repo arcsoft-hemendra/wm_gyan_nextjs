@@ -285,7 +285,7 @@ video {
   margin-right: auto;
   width: 100%;
 }
-
+ 
 @media (min-width: 1100px) {
   .container {
     max-width: 1140px;

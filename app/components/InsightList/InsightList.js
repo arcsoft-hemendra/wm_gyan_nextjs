@@ -7,7 +7,7 @@ import InsightCard from "../common/InsightCard/InsightCard";
 const InsightList = ({ data }) => {
   return (
     <React.Fragment>
-      <MainHeading title="Insights" />
+      <MainHeading title="Insights" route="/insights" />
       <div className={style.insightMain_div}>
         {data.map((item, index) => (
           <InsightCard item={item} />

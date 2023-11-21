@@ -4,6 +4,7 @@ import HomeVideoList from "./components/HomeVideoList/HomeVideoList";
 import InsightList from "./components/InsightList/InsightList";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/common/Footer/Footer";
+import SubFooter from "./components/common/SubFooter/SubFooter";
 
 const URL = "https://cdn.workmob.com/stories_workmob";
 async function getVideosList() {
@@ -57,6 +58,7 @@ export default async function Home() {
         <InsightList data={insightData} />
       </div>
       <Footer />
+      <SubFooter/>
     </main>
   );
 }
