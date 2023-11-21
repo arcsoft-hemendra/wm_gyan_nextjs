@@ -2,7 +2,8 @@ import React from "react";
 import VideoJS from "../common/VideoJS/VideoJS";
 import style from "./StoryDetailPageVideoContainer.module.css";
 
-const StoryDetailPageVideoContainer = () => {
+const StoryDetailPageVideoContainer = (props) => {
+  // console.log(props)
   return (
     <>
       <VideoJS

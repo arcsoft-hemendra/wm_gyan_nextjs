@@ -19,12 +19,26 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const StoryDetailPage = () => {
-  return (
-    <>
-      <StoryDetailPageVideoContainer />
-    </>
-  );
+async function getVideosDetail(userId) {
+  const URL = "https://cdn.workmob.com/stories_workmob";
+
+  // read route params
+  // const userId = params.id;
+
+  const res = await fetch(`${URL}/config/gyan-story-detail/${userId}.json`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+const StoryDetailPage = async ({ params: { id } }) => {
+  const data = await getVideosDetail(id);
+
+  return <StoryDetailPageVideoContainer data={data}/>;
 };
 
 export default StoryDetailPage;
