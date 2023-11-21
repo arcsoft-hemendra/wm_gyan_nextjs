@@ -1,5 +1,5 @@
 import React from "react";
-import StoryDetailPageVideoContainer from "../components/StoryDetailPageVideoContainer/StoryDetailPageVideoContainer";
+import StoryDetailPageVideoContainer from "./../../components/StoryDetailPageVideoContainer/StoryDetailPageVideoContainer";
 
 export async function generateMetadata({ params }) {
   const URL = "https://cdn.workmob.com/stories_workmob";

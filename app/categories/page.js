@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryCardList from "../components/CategoryCardList/CategoryCardList";
+import CategoryCardList from "./../../components/CategoryCardList/CategoryCardList";
 
 async function getCategoryList() {
   const URL = "https://cdn.workmob.com/stories_workmob";

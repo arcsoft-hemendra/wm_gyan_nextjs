@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryDetailList from "@/app/components/CategoryDetailList/CategoryDetailList";
+import CategoryDetailList from "./../../../components/CategoryDetailList/CategoryDetailList";
 
 async function getCategoryVideoList(category) {
   const URL = "https://cdn.workmob.com/stories_workmob";

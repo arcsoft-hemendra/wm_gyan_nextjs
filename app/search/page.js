@@ -1,5 +1,5 @@
 import React from "react";
-import SearchVideoList from "../components/SearchVideoList/SearchVideoList";
+import SearchVideoList from "./../../components/SearchVideoList/SearchVideoList";
 
 async function getVideosList() {
   const URL = "https://cdn.workmob.com/stories_workmob";

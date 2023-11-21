@@ -1,5 +1,5 @@
 import React from "react";
-import InsightCardList from "../components/InsightCardList/InsightCardList";
+import InsightCardList from "./../../components/InsightCardList/InsightCardList";
 
 async function getInsightList() {
   const URL = "https://cdn.workmob.com/stories_workmob";

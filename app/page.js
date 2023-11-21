@@ -1,10 +1,10 @@
-import CategoryList from "./components/CategoryList/CategoryList";
-import HeroSection from "./components/HeroSection/HeroSection";
-import HomeVideoList from "./components/HomeVideoList/HomeVideoList";
-import InsightList from "./components/InsightList/InsightList";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/common/Footer/Footer";
-import SubFooter from "./components/common/SubFooter/SubFooter";
+import CategoryList from "./../components/CategoryList/CategoryList";
+import HeroSection from "./../components/HeroSection/HeroSection";
+import HomeVideoList from "./../components/HomeVideoList/HomeVideoList";
+import InsightList from "./../components/InsightList/InsightList";
+import Navbar from "./../components/Navbar/Navbar";
+import Footer from "./../components/common/Footer/Footer";
+import SubFooter from "./../components/common/SubFooter/SubFooter";
 
 const URL = "https://cdn.workmob.com/stories_workmob";
 async function getVideosList() {
