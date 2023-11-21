@@ -14,7 +14,7 @@ const HomeVideoList = ({ data }) => {
       <MainHeading title="Gyan Videos" route="/search" />
       <div className={style.videoListContainer}>
         {!data ? (
-          <div className={style.loaderHeight}>
+          <div className={style.loaderHeight}>  
             <div className={style.loaderContainer}>
               <LoaderComponent type={true} />
             </div>
