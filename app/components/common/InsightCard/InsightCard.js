@@ -1,18 +1,18 @@
 import React from "react";
 import style from "./InsightCard.module.css";
 
-const InsightCard = ({item, index}) => {
+const InsightCard = (props) => { 
   return (
-    <div className={style.insightItemDiv} key={index}>
-      <a className={style.insightItemLink} href="/">
+    <div className={style.insightItemDiv} key={props?.index}>
+      <a className={style.insightItemLink} href={props?.item?.slug}>
         <img
           className={style.insightItemDivImage}
-          src={item.thumb}
+          src={props?.item?.thumb}
           alt="insightIcon"
         />
       </a>
       <div className={style.insightStoryHeading}>
-        {item.storyHeading}
+        {props?.item?.storyHeading}
       </div>
     </div>
   );

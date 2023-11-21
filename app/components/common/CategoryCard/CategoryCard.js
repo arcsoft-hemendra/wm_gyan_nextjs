@@ -4,6 +4,7 @@ import style from "./CategoryCard.module.css";
 
 const CategoryCard = (props) => {
   const URL = "https://cdn.workmob.com/stories_workmob";
+  console.log('sdfd', props)
   return (
     <Link
       key={props?.key}
@@ -12,7 +13,7 @@ const CategoryCard = (props) => {
         props.type === "web"
           ? `${style.category_d} ${style.cat_link}`
           : props.type === "mobile"
-          ? `${style.category_m}  ${style.mobile_link}`
+          ? `${style.category_m}  ${style.mobile_link}` 
           : `${style.displayBlock} ${style.cat_link}`
       }
     >

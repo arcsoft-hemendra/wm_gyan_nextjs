@@ -1,0 +1,21 @@
+.insighthead{
+    color: #fff;
+    float: left;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.insightMain_div {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .insightMain_div {
+        width: 95%;
+        margin: auto;        
+        flex-direction: column;
+      } 
+}

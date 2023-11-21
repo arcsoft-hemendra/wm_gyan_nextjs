@@ -10,7 +10,7 @@ const InsightList = ({ data }) => {
       <MainHeading title="Insights" route="/insights" />
       <div className={style.insightMain_div}>
         {data.map((item, index) => (
-          <InsightCard item={item} />
+          <InsightCard item={item} index={index}/>
         ))}
       </div>
     </React.Fragment>
