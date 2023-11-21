@@ -15,7 +15,7 @@ const InsightCardList = ({ data }) => {
         <h1 className={style.insighthead}>INSIGHTS</h1>
         <div className={style.insightMain_div}>
           {data?.map((item, index) => (
-            <InsightCard item={item} index={index} />
+            <InsightCard item={item} key={index} />
           ))}
         </div>
       </div>
