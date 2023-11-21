@@ -19,7 +19,7 @@ function Footer() {
                   &copy; {new Date().getFullYear()} Workmob Pvt. Ltd. All rights
                   reserved.
                 </div>
-                <div className="mb-2 mb-md-0">
+                <div>
                   <Link
                     href="https://www.workmob.com/about"
                     target="_blank"

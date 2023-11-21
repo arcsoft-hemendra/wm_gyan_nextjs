@@ -3,8 +3,7 @@ import React from "react";
 import style from "./CategoryCard.module.css";
 
 const CategoryCard = (props) => {
-  const URL = "https://cdn.workmob.com/stories_workmob";
-  console.log('sdfd', props)
+  const URL = "https://cdn.workmob.com/stories_workmob"; 
   return (
     <Link
       key={props?.key}

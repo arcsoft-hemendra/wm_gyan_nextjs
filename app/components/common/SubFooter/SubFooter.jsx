@@ -13,7 +13,7 @@ const SubFooter = () => {
   );
 
   const [isScrollDown, setIsScrollDown] = useState(false);
-
+const whatsappurl = "https://wa.me/919001985566?text=I%20want%20to%20join%20your%20movement."
   useEffect(() => {
     let lastScroll;
     let isThrottle;
@@ -48,7 +48,7 @@ const SubFooter = () => {
       <div className={style.bottomText}>{bottomText}</div>
       <Link
         className={style.contactUs}
-        href="https://wa.me/919001985566?text=I%20want%20to%20join%20your%20movement."
+        href={whatsappurl}
         target="_blank"
       >
         Contact Us
