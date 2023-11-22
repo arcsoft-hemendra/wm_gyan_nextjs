@@ -1,9 +1,9 @@
 import React from "react";
 import VideoJS from "../common/VideoJS/VideoJS";
+import VideoDetailMoreVideos from "../VideoDetailMoreVideos/VideoDetailMoreVideos";
 import style from "./StoryDetailPageVideoContainer.module.css";
 
 const StoryDetailPageVideoContainer = ({ data }) => {
-
   return (
     <>
       <VideoJS
@@ -27,6 +27,7 @@ const StoryDetailPageVideoContainer = ({ data }) => {
           poster: data.video_landscape_thumb,
         }}
       />
+      <VideoDetailMoreVideos instructor={data?.instructor} name={data?.name}/>
     </>
   );
 };

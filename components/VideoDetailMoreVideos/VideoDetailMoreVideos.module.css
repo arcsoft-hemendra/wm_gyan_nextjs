@@ -1,0 +1,15 @@
+.suggestedVideoContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 2em;
+  margin: auto;
+  padding: 10px 15px !important;
+}
+
+@media (max-width: 767px) {
+  .suggestedVideoContainer {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+}

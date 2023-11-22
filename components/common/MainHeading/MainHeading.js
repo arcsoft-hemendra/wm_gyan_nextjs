@@ -9,12 +9,14 @@ const MainHeading = (props) => {
         {props?.title}
         <span className={style.bottomDivider} />
       </h2>
-      <Link href={`${props?.route}`}>
-        <i
-          onClick={props?.onClick}
-          className={`icon icon-right-arrow  ${style.heading} ${style.iconArrow}`}
-        />
-      </Link>
+      {props?.route && (
+        <Link href={`${props?.route}`}>
+          <i
+            onClick={props?.onClick}
+            className={`icon icon-right-arrow  ${style.heading} ${style.iconArrow}`}
+          />
+        </Link>
+      )}
     </div>
   );
 };
