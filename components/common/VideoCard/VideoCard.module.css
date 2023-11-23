@@ -1,3 +1,7 @@
+.anchor{
+  text-decoration: none;
+}
+
 .mainCardSection {
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
@@ -45,6 +49,10 @@
 
 .heading {
   color: white;
+  margin-top: 5px;
+  font-family: "alata";
+  opacity: 0.8;
+  text-align: left;
 }
 
 @media (max-width: 767px) {

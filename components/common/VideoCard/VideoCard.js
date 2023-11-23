@@ -5,7 +5,7 @@ import style from "./VideoCard.module.css";
 
 const VideoCard = (props) => {
   return (
-    <Link key={props?.index} href={props.slug}>
+    <Link key={props?.index} href={props.slug} className={style.anchor}>
       <section className={style.mainCardSection}>
         <img
           className={style.mainCardImage}
@@ -16,11 +16,9 @@ const VideoCard = (props) => {
           <i className={`icon icon-play ${style.playIcon}`} />
         </div>
       </section>
-      {
-        props?.storyHeading &&
+      {props?.storyHeading && (
         <p className={style.heading}>{props?.storyHeading}</p>
-      }
-
+      )}
     </Link>
   );
 };

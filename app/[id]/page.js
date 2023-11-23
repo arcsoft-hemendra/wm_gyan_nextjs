@@ -1,5 +1,6 @@
 import React from "react";
-import StoryDetailPageVideoContainer from "./../../components/StoryDetailPageVideoContainer/StoryDetailPageVideoContainer";
+import VideoDetailPageSkeleton from "@/components/VideoDetailPageSkeleton/VideoDetailPageSkeleton";
+import VideoDetailPageComponent from "../../components/VideoDetailPageComponent/VideoDetailPageComponent";
 
 export async function generateMetadata({ params }) {
   const URL = "https://cdn.workmob.com/stories_workmob";
@@ -36,7 +37,11 @@ async function getVideosDetail(userId) {
 const StoryDetailPage = async ({ params: { id } }) => {
   const data = await getVideosDetail(id);
 
-  return <StoryDetailPageVideoContainer data={data}/>;
+  if (!data) {
+    return <VideoDetailPageSkeleton />;
+  }
+
+  return <VideoDetailPageComponent data={data} />;
 };
 
 export default StoryDetailPage;

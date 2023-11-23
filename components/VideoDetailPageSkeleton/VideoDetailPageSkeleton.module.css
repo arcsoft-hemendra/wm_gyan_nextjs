@@ -1,0 +1,62 @@
+.mainContainer {
+  height: 100%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+.skeletonContainer {
+  animation: skeleton-loading 1s linear infinite alternate;
+  min-height: 50vh;
+  max-width: 90vw;
+  background: black;
+  opacity: 60%;
+  border-radius: 20px;
+  margin-top: 30px;
+  width: 80% !important;
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px 15px !important;
+}
+
+.skeletonvideo {
+  animation: skeleton-loading 1s linear infinite alternate;
+  position: relative;
+  height: 26px;
+  min-height: 20px;
+  width: 70%;
+  left: 50%;
+  border-radius: 4px;
+  background: black;
+  opacity: 60%;
+  margin-top: 12px;
+  transform: translate(-50%, 0px);
+}
+
+.items {
+  width: 85%;
+  margin: 42px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+}
+
+.thumbnail {
+  border-radius: 12px;
+  margin: 1rem;
+  color: white;
+  animation: skeleton-loading 1s linear infinite alternate;
+  min-height: 20vh;
+  max-width: 40vw;
+  background: black;
+  opacity: 60%;
+}
+
+@media (max-width: 767px) {
+  .items {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

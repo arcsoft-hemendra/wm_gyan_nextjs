@@ -1,17 +1,16 @@
 "use client";
 import React from "react";
 import style from "./Footer.module.css";
-import { usePathname } from "next/navigation";
-import FooterData from './FooterData.json';
+import FooterData from "./FooterData.json";
 import Link from "next/link";
 
-function Footer() {
-  const { gyanJson } = FooterData; 
+function Footer(props) {
+  const { gyanJson } = FooterData;
   const heart = "https://www.workmob.com/static/media/heart.33403302.svg";
-  const { pathname } = usePathname();
   return (
-    <React.Fragment> 
-        <div className={style.page_footer}> 
+    <React.Fragment>
+      {!props?.dontShowSubFooter && (
+        <div className={style.page_footer}>
           <div className="container">
             <div className={style.submain_div}>
               <div className={style.footer_left}>
@@ -23,31 +22,36 @@ function Footer() {
                   <Link
                     href="https://www.workmob.com/about"
                     target="_blank"
-                    className={style.footerLink}>
+                    className={style.footerLink}
+                  >
                     About
                   </Link>
                   <Link
                     href="https://www.workmob.com/terms"
                     target="_blank"
-                    className={style.footerLink}>
+                    className={style.footerLink}
+                  >
                     Terms
                   </Link>
                   <Link
                     className={style.footerLink}
                     href="https://www.workmob.com/legal"
-                    target="_blank">
+                    target="_blank"
+                  >
                     Legal
                   </Link>
                   <Link
                     className={style.footerLink}
                     href="https://www.workmob.com/privacy"
-                    target="_blank">
+                    target="_blank"
+                  >
                     Privacy
                   </Link>
                   <Link
                     className={style.footerLink}
                     href="https://www.workmob.com/brand-ambassador"
-                    target="_blank">
+                    target="_blank"
+                  >
                     Ambassador
                   </Link>
                 </div>
@@ -106,7 +110,9 @@ function Footer() {
               </div>
             </div>
           </div>
-        </div> 
+        </div>
+      )}
+
       <div className={style.HomePageFooter}>
         <div className={style.footerMainContainer}>
           <div className={style.footerMiddle}>

@@ -34,7 +34,7 @@ const VideoDetailMoreVideos = (props) => {
   return (
     <>
       {filterData?.length > 0 && (
-        <div className="container">
+        <>
           <MainHeading title={title} />
           <div className={style.suggestedVideoContainer}>
             {filterData.map((item, index) => {
@@ -43,11 +43,12 @@ const VideoDetailMoreVideos = (props) => {
                   key={index}
                   video_landscape_thumb={item?.video_landscape_thumb}
                   slug={item?.slug}
+                  storyHeading={item?.storyHeading}
                 />
               );
             })}
           </div>
-        </div>
+        </>
       )}
     </>
   );
