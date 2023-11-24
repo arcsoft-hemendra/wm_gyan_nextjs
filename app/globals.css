@@ -262,6 +262,21 @@ video {
   display: block;
 }
 
+li {
+  list-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
 /* Hide SHOW ENDS */
 
 .indiana-scroll-container--hide-scrollbars {
@@ -290,7 +305,7 @@ video {
   margin-right: auto;
   width: 100%;
 }
- 
+
 @media (min-width: 1100px) {
   .container {
     max-width: 1140px;

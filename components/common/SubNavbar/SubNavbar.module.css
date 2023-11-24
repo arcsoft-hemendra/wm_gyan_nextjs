@@ -30,12 +30,12 @@
 }
 
 .searchContainer {
-  font-size: 1.6em;
+  font-size: 1.6rem;
   width: 100%;
-  max-width: 700px;
-  padding: 0.5em 1em 0.5em 2.3em;
+  max-width: 400px;
+  padding: 0.8rem 1.9rem 0.7rem 4rem;
   text-align: initial;
-  margin: 1.5rem auto;
+  margin: 1.5rem auto;  
   background: #ffffff1f;
   border-radius: 30px;
   position: relative;
@@ -81,6 +81,7 @@
   .searchContainer {
     font-size: 1.25em;
     width: auto;
+    padding-left: 3rem;
   }
   .searchIcon {
     left: 20px;

@@ -1,0 +1,58 @@
+.InsightDetailmain{
+    margin-top: 0.5rem;
+    margin: 0 10px;
+}
+
+.details{
+    background: transparent;
+    padding: 0;
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.headInsight{
+    font-weight: normal;
+    font-family: 'hp-simplified';
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+.banner{
+    width: 100%;
+    background-color: orange;
+    border-radius: 20px;
+}
+
+.articleDetail{
+    position: relative;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.content{   
+    font-size: 18px;
+    color: #fff;
+}
+
+.contentDetails{
+    margin-bottom: 2rem;
+    line-height: 1.5rem;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.datediv{
+    width: 100%;
+    color: #fff;
+}
+
+@media (max-width: 768px){
+    .InsightDetailmain{
+        margin-top: 0rem; 
+    }
+
+    .headInsight{
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+    }
+}

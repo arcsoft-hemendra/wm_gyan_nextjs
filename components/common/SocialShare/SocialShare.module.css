@@ -1,0 +1,49 @@
+.socialshare {
+  position: absolute;
+  right: 10px;
+  bottom: 30px;
+}
+
+.socialdiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.socialdiv li {
+  color: #fff;
+  padding: 0.2rem;
+  position: relative;
+  transition: all 0.2s ease-out;
+  padding-bottom: 0.5rem;
+}
+
+.socialdiv .copy {
+  border: none !important;
+  border-radius: 20px !important;
+}
+
+.copy_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .socialshare {
+    position: fixed;
+    right: 0px;
+    left: 0;
+    bottom: 0px !important;
+    z-index: 7;
+    padding: 0;
+    background: #000;
+  }
+
+  .socialdiv {
+    flex-direction: row;
+  }
+}
