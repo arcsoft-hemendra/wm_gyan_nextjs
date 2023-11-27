@@ -16,7 +16,7 @@ const SubNavbar = (props) => {
           />
         </Link>
       </div>
-
+    <div>
       {props.discription && (
         <div className={style.discriptionContainer}>
           <h1
@@ -39,6 +39,7 @@ const SubNavbar = (props) => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };

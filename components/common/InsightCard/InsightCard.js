@@ -5,7 +5,10 @@ import style from "./InsightCard.module.css";
 const InsightCard = (props) => {
   return (
     <div className={style.insightItemDiv} key={props?.index}>
-      <Link className={style.insightItemLink} href={props?.item?.slug}>
+      <Link
+        className={style.insightItemLink}
+        href={`insights/${props?.item?.slug}`}
+      >
         <img
           className={style.insightItemDivImage}
           src={props?.item?.thumb}

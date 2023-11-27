@@ -17,6 +17,7 @@
     "react-dropdown": "^1.11.0",
     "react-indiana-drag-scroll": "^2.2.0",
     "react-loader-spinner": "^5.4.5",
+    "react-share": "^5.0.2",
     "video.js": "^8.6.1",
     "videojs-contrib-hls": "^5.15.0"
   },
