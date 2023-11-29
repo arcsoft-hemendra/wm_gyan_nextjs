@@ -30,17 +30,23 @@ const CategoryDetailList = (props) => {
   return (
     <div>
       <SubNavbar />
-      <div className={style.videoContainer}>
-        {videoList.map((item, index) => {
-          return (
-            <VideoCard
-              key={index}
-              video_landscape_thumb={item?.video_landscape_thumb}
-              slug={`/${item?.slug}`}
-            />
-          );
-        })}
-      </div>
+      {videoList?.length > 0 ? (
+        <div className={style.videoContainer}>
+          {videoList.map((item, index) => {
+            return (
+              <VideoCard
+                key={index}
+                video_landscape_thumb={item?.video_landscape_thumb}
+                slug={`/${item?.slug}`}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <div className={style.notFound}>
+          <p>No Video Available.</p>
+        </div>
+      )}
     </div>
   );
 };

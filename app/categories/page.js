@@ -1,8 +1,9 @@
 import React from "react";
 import CategoryCardList from "./../../components/CategoryCardList/CategoryCardList";
+import { getCookie } from "cookies-next";
+import { cookies } from "next/headers";
 
-async function getCategoryList() {
-  const URL = "https://cdn.workmob.com/stories_workmob";
+async function getCategoryList(URL) {
   const res = await fetch(`${URL}/config/gyan-category.json`, {
     cache: "no-store",
   });
@@ -14,7 +15,11 @@ async function getCategoryList() {
 }
 
 const Categories = async () => {
-  const categoryData = await getCategoryList();
+  const cookieGet = getCookie("YOUNGSTARS", { cookies });
+  const URL = cookieGet
+    ? "https://cdn.workmob.com/youngstars_workmob"
+    : "https://cdn.workmob.com/stories_workmob";
+  const categoryData = await getCategoryList(URL);
   return <CategoryCardList data={categoryData} />;
 };
 

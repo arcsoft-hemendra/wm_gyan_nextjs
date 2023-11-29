@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import VideoJS from "../common/VideoJS/VideoJS";
-
+import { hasCookie } from "cookies-next";
+import LoaderComponent from "../common/Loader/Loader";
 import { youngstarVideo, karmyogisVideo } from "./HeroSectionData";
 import style from "./HeroSection.module.css";
 
@@ -10,11 +11,12 @@ const HeroSection = () => {
   const [karmyogiVideo, setKarmYogiVideo] = useState({});
   const [playVideo, setPlayVideo] = useState(true);
   const [loader, setLoader] = useState(true);
+
   const videoRef = useRef(null);
 
   useEffect(() => {
-    const item = sessionStorage.getItem("youngstars");
-    if (item) {
+    const cookieAvailable = hasCookie("YOUNGSTARS");
+    if (cookieAvailable) {
       setYoungVideo(youngstarVideo);
       setKarmYogiVideo({});
       setLoader(false);
@@ -45,7 +47,11 @@ const HeroSection = () => {
   return (
     <>
       {loader ? (
-        <div className={style.videoBackgroundLayout} />
+        <div className={style.videoBackgroundLayout}>
+          {typeof window !== "undefined" && window?.innerWidth > 768 && (
+            <LoaderComponent />
+          )}
+        </div>
       ) : (
         <div
           className={style.homeVideoContainerBackground}

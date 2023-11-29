@@ -28,6 +28,16 @@
   width: 100%;
 }
 
+.loaderHeight {
+  height: 100px;
+}
+
+.loaderContainer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0px);
+}
+
 @media (max-width: 900px) {
   .category_d {
     display: none;

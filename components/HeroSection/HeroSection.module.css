@@ -1,6 +1,5 @@
 .videoBackgroundLayout {
-  margin-top: 2.6rem;
-  padding-top: 56.25%;
+  padding-top: 56%;
 }
 
 .homeVideoContainerBackground {
@@ -24,6 +23,9 @@
 
 
 @media (max-width: 767px) {
+  .videoBackgroundLayout {
+    background: #1c1c1c;
+  }
   .homeVideoContainerBackground {
     margin-top: 2.5rem;
   }

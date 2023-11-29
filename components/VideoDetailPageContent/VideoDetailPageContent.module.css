@@ -1,6 +1,6 @@
 .titleAndButtonContainer {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   margin: 0 auto;
   padding: 0px 15px !important;

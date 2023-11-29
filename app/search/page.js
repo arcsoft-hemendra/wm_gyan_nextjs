@@ -1,8 +1,9 @@
 import React from "react";
 import SearchVideoList from "./../../components/SearchVideoList/SearchVideoList";
+import { getCookie } from "cookies-next";
+import { cookies } from "next/headers";
 
-async function getVideosList() {
-  const URL = "https://cdn.workmob.com/stories_workmob";
+async function getVideosList(URL) {
   const res = await fetch(`${URL}/config/gyan-stories-top.json`, {
     cache: "no-store",
   });
@@ -14,7 +15,11 @@ async function getVideosList() {
 }
 
 const Search = async () => {
-  const videoData = await getVideosList();
+  const cookieGet = getCookie("YOUNGSTARS", { cookies });
+  const URL = cookieGet
+    ? "https://cdn.workmob.com/youngstars_workmob"
+    : "https://cdn.workmob.com/stories_workmob";
+  const videoData = await getVideosList(URL);
   return <SearchVideoList data={videoData} />;
 };
 

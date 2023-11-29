@@ -5,9 +5,10 @@ import InsightList from "./../components/InsightList/InsightList";
 import Navbar from "./../components/Navbar/Navbar";
 import Footer from "./../components/common/Footer/Footer";
 import SubFooter from "./../components/common/SubFooter/SubFooter";
+import { getCookie } from "cookies-next";
+import { cookies } from "next/headers";
 
-const URL = "https://cdn.workmob.com/stories_workmob";
-async function getVideosList() {
+async function getVideosList(URL) {
   const res = await fetch(`${URL}/config/gyan-stories-top.json`, {
     cache: "no-store",
   });
@@ -18,7 +19,7 @@ async function getVideosList() {
   return res.json();
 }
 
-async function getCategoryList() {
+async function getCategoryList(URL) {
   const res = await fetch(`${URL}/config/gyan-category.json`, {
     cache: "no-store",
   });
@@ -31,7 +32,7 @@ async function getCategoryList() {
 
 async function getInsightList() {
   const res = await fetch(
-    `${URL}/config/gyan-insightlisting.json
+    `https://cdn.workmob.com/stories_workmob/config/gyan-insightlisting.json
   `,
     {
       cache: "no-store",
@@ -45,8 +46,12 @@ async function getInsightList() {
 }
 
 export default async function Home() {
-  const videoData = await getVideosList();
-  const categoryData = await getCategoryList();
+  const cookieGet = getCookie("YOUNGSTARS", { cookies });
+  const URL = cookieGet
+    ? "https://cdn.workmob.com/youngstars_workmob"
+    : "https://cdn.workmob.com/stories_workmob";
+  const videoData = await getVideosList(URL);
+  const categoryData = await getCategoryList(URL);
   const insightData = await getInsightList();
   return (
     <main>
@@ -58,7 +63,7 @@ export default async function Home() {
         <InsightList data={insightData} />
       </div>
       <Footer />
-      <SubFooter/>
+      <SubFooter />
     </main>
   );
 }

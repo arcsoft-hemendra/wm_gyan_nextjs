@@ -5,6 +5,7 @@ import axios from "axios";
 import VideoCard from "../common/VideoCard/VideoCard";
 import style from "./VideoDetailMoreVideos.module.css";
 import MainHeading from "../common/MainHeading/MainHeading";
+import { hasCookie } from "cookies-next";
 
 const VideoDetailMoreVideos = (props) => {
   const pathname = usePathname();
@@ -15,7 +16,10 @@ const VideoDetailMoreVideos = (props) => {
   }, [props.instructor]);
 
   const fetchData = async () => {
-    const URL = "https://cdn.workmob.com/stories_workmob";
+    const cookieAvailable = hasCookie("YOUNGSTARS");
+    const URL = cookieAvailable
+      ? "https://cdn.workmob.com/youngstars_workmob"
+      : "https://cdn.workmob.com/stories_workmob";
 
     const result = await axios(
       `${URL}/config/instructor/${props.instructor}.json`
