@@ -17,7 +17,8 @@ const CategoryList = ({ data }) => {
               <div className={style.loaderContainer}>
                 <LoaderComponent type={true} />
               </div>
-            </div>
+            </div> 
+                            
           ) : (
             <>
               {data

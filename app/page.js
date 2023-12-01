@@ -1,10 +1,31 @@
-import CategoryList from "./../components/CategoryList/CategoryList";
-import HeroSection from "./../components/HeroSection/HeroSection";
-import HomeVideoList from "./../components/HomeVideoList/HomeVideoList";
-import InsightList from "./../components/InsightList/InsightList";
-import Navbar from "./../components/Navbar/Navbar";
-import Footer from "./../components/common/Footer/Footer";
-import SubFooter from "./../components/common/SubFooter/SubFooter";
+import dynamic from "next/dynamic";
+const Navbar = dynamic(() => import("./../components/Navbar/Navbar"), {
+  ssr: false,
+});
+const HeroSection = dynamic(() =>
+  import("./../components/HeroSection/HeroSection")
+);
+const HomeVideoList = dynamic(
+  () => import("./../components/HomeVideoList/HomeVideoList"),
+  { ssr: false }
+);
+const CategoryList = dynamic(
+  () => import("./../components/CategoryList/CategoryList"),
+  { ssr: false }
+);
+const InsightList = dynamic(
+  () => import("./../components/InsightList/InsightList"),
+  { ssr: false }
+);
+const Footer = dynamic(() => import("./../components/common/Footer/Footer"), {
+  ssr: false,
+});
+const SubFooter = dynamic(
+  () => import("./../components/common/SubFooter/SubFooter"),
+  {
+    ssr: false,
+  }
+);
 import { getCookie } from "cookies-next";
 import { cookies } from "next/headers";
 

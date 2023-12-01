@@ -1,35 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { usePathname } from "next/navigation";
-import axios from "axios";
 import VideoCard from "../common/VideoCard/VideoCard";
-import style from "./VideoDetailMoreVideos.module.css";
 import MainHeading from "../common/MainHeading/MainHeading";
-import { hasCookie } from "cookies-next";
+import style from "./VideoDetailMoreVideos.module.css";
 
 const VideoDetailMoreVideos = (props) => {
   const pathname = usePathname();
-  const [suggestedVideo, setSuggestedVideo] = useState([]);
 
-  useEffect(() => {
-    fetchData();
-  }, [props.instructor]);
-
-  const fetchData = async () => {
-    const cookieAvailable = hasCookie("YOUNGSTARS");
-    const URL = cookieAvailable
-      ? "https://cdn.workmob.com/youngstars_workmob"
-      : "https://cdn.workmob.com/stories_workmob";
-
-    const result = await axios(
-      `${URL}/config/instructor/${props.instructor}.json`
-    );
-    if (result?.data?.gyan && result?.data?.gyan.length > 0) {
-      setSuggestedVideo(result.data.gyan);
-    }
-  };
-
-  const filterData = suggestedVideo.filter(
+  const filterData = props.suggestedVideo.filter(
     (item) => item.slug !== pathname?.split("/")[1]
   );
 
@@ -39,7 +18,7 @@ const VideoDetailMoreVideos = (props) => {
     <>
       {filterData?.length > 0 && (
         <>
-          <MainHeading title={title} />
+          <MainHeading title={title} type={"detail"} />
           <div className={style.suggestedVideoContainer}>
             {filterData.map((item, index) => {
               return (

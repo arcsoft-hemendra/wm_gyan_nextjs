@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import "./../../app/globals.css";
+import React, { useEffect, useState } from "react"; 
 import style from "./Navbar.module.css";
 import { useRef } from "react";
 import { WorkmobLogo } from "./NavBarData";

@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import SubNavbar from "../common/SubNavbar/SubNavbar";
 import VideoCard from "../common/VideoCard/VideoCard";
 import style from "./SearchVideoList.module.css";
+import Footer from "../common/Footer/Footer";
 
 const SearchVideoList = (props) => {
   const [searchVideo, setSearchVideo] = useState("");
@@ -67,6 +68,7 @@ const SearchVideoList = (props) => {
           <p>No Video Available.</p>
         </div>
       )}
+        <Footer dontShowSubFooter={true}/>
     </>
   );
 };

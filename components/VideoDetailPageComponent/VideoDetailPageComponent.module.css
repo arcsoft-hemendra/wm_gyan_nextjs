@@ -24,10 +24,6 @@
   padding: 4px;
 }
 
-.StoryDetailPageVideo img{
-  border-radius: 20px;
-}
-
 @media (max-width: 768px) {
   .StoryDetailPageVideo video {
     width: 100%;

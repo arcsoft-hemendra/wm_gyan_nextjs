@@ -15,7 +15,11 @@ const InsightCard = (props) => {
           alt="insightIcon"
         />
       </Link>
-      <div className={style.insightStoryHeading}>
+      <div className={
+          props?.page === "insight"
+            ? style.insightStoryHeadingInner
+            : style.insightStoryHeading
+        }>
         {props?.item?.storyHeading}
       </div>
     </div>

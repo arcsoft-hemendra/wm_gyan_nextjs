@@ -1,11 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CategoryCard from "../common/CategoryCard/CategoryCard";
 import SubNavbar from "../common/SubNavbar/SubNavbar";
 import style from "./CategoryCardList.module.css";
+import Footer from "../common/Footer/Footer";
+import LoaderComponent from "../common/Loader/Loader";
 
 const CategoryCardList = (props) => {
   const [categorySearch, setCategorySearch] = useState("");
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const filteredCategoryData = props.data.filter((cate) => {
     if (categorySearch === "") {
@@ -15,6 +23,19 @@ const CategoryCardList = (props) => {
     }
   });
 
+  const getSlicedItem = () => {
+    let value;
+    if (isClient) {
+      const mobileDevice = window.innerWidth < 768;
+      value = mobileDevice ? 0 : categorySearch.length != 0 ? 0 : 5;
+    }
+    return value;
+  };
+
+  if (!isClient) {
+    return <LoaderComponent />;
+  }
+
   return (
     <div>
       <SubNavbar
@@ -23,18 +44,17 @@ const CategoryCardList = (props) => {
         onChange={setCategorySearch}
         value={categorySearch}
       />
-
       <div>
         {filteredCategoryData.length > 0 ? (
           <div className={style.categoryMainContainer}>
             <div
               className={
-                style.categoriesFlex +
-                " " +
-                `${categorySearch.length === 0 ? " " : style.displayNone}`
+                categorySearch.length === 0
+                ? style.categoriesFlex
+                : style.displayNone
               }
             >
-              {filteredCategoryData
+              {[...filteredCategoryData]
                 .reverse()
                 .slice(0, 5)
                 .map((category, index) => {
@@ -49,9 +69,9 @@ const CategoryCardList = (props) => {
             </div>
             <div className={style.categoryContainer}>
               {filteredCategoryData.length > 0
-                ? filteredCategoryData
+                ? [...filteredCategoryData]
                     .reverse()
-                    .slice(categorySearch.length != 0 ? 0 : 5)
+                    .slice(getSlicedItem())
                     .map((category, index) => (
                       <CategoryCard
                         category={category.category}
@@ -68,6 +88,8 @@ const CategoryCardList = (props) => {
           </div>
         )}
       </div>
+      
+      <Footer dontShowSubFooter={true} />
     </div>
   );
 };

@@ -16,7 +16,6 @@ export async function generateMetadata({ params }) {
       cache: "no-store",
     }).then((res) => res.json());
   }else{
-    console.log("stories")
      data = await fetch(`https://cdn.workmob.com/stories_workmob/config/gyan-story-detail/${userId}.json`, {
       cache: "no-store",
     }).then((res) => res.json());
