@@ -48,9 +48,7 @@ const HeroSection = () => {
     <>
       {loader ? (
         <div className={style.videoBackgroundLayout}>
-          {typeof window !== "undefined" && window?.innerWidth > 768 && (
-            <LoaderComponent />
-          )}
+          {/* <LoaderComponent /> */}
         </div>
       ) : (
         <div
