@@ -1,5 +1,4 @@
-import React from "react";
-import CloseBtn from "../common/CloseBtn/CloseBtn";
+import React from "react"; 
 import style from "./InsightDetailList.module.css";
 import SubNavbar from "../common/SubNavbar/SubNavbar";
 import Footer from "../common/Footer/Footer";
@@ -15,8 +14,7 @@ const InsightDetailList = (props) => {
           <h1 className={style.headInsight}>
             {props.insightData?.storyHeading}
           </h1>
-          <div>
-            {/* <div style={{position:'relative',paddingTop:'46.13rem'}}></div> */}
+          <div> 
             <img
               className={style.banner}
               src={props?.insightData?.full}

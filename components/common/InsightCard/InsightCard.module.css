@@ -1,56 +1,66 @@
 .insightItemDiv {
-    width: 48%;
-    text-decoration: none;
-    font-family: "Montserrat", sans-serif;
-  
-  }
-  .insightItemDivImage{
-    width: 100%;
-    border-radius: 0.5rem;
-      display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  
-  .insightItemLink{
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: relative;
-    width: 100%; 
-      display: block;
-      border-radius: 12px;
-  }
-  
-  .insightItemLink::before{
-    content: "";
-    padding-top: 69.5%;
-    display: block;
-  }
-  
-  
-  .insightStoryHeading{
-    margin: 1rem 0.5rem;
-    display: flex;
-    list-style: none;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: left;
-    line-height: 25px;
-  }
+  width: 48%;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+.insightItemDivImage {
+  width: 100%;
+  border-radius: 0.5rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
-  @media (max-width: 767px) {
-    .insightItemDiv {
-        margin-top: 12px;
-        width: 100%; 
-      }
-    
-      .insightStoryHeading{
-        text-align: start;
-        font-size: 1rem;
-      }
-    
+.insightItemLink {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.insightItemLink::before {
+  content: "";
+  padding-top: 69.5%;
+  display: block;
+}
+
+.insightStoryHeading {
+  margin: 1rem 0.5rem;
+  display: flex;
+  list-style: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 25px;
+}
+
+.insightStoryHeadingInner {
+  margin: 1rem 0.5rem;
+  display: flex;
+  list-style: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: left;
+  font-family: "NeueHaasGrotesk";
+}
+
+@media (max-width: 767px) {
+  .insightItemDiv {
+    margin-top: 12px;
+    width: 100%;
   }
+  .insightStoryHeading {
+    text-align: start;
+    font-size: 1rem;
+  }
+  .insightStoryHeadingInner {
+    font-size: 1rem;
+  }
+}

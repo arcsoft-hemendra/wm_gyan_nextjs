@@ -24,7 +24,7 @@
 }
 
 .displayNone {
-  display: none;
+  display: none !important;
 }
 
 .noCategoryFound {
@@ -43,6 +43,7 @@
     width: 95%;
     margin: auto;
     gap: 10px;
+    display: none
   }
 }
 

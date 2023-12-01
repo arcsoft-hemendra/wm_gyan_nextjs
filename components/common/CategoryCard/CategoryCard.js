@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { hasCookie } from "cookies-next";
 import style from "./CategoryCard.module.css";
-import LoaderComponent from "../Loader/Loader";
 
 const CategoryCard = (props) => {
   const [isClient, setIsClient] = useState(false);
@@ -36,14 +35,6 @@ const CategoryCard = (props) => {
           alt={`${props.category} imageIcon`}
         />
       </Link>
-    );
-  } else {
-    return (
-      <div className={style.loaderHeight}>
-        <div className={style.loaderContainer}>
-          <LoaderComponent type={true} />
-        </div>
-      </div>
     );
   }
 };

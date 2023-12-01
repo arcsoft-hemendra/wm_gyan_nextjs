@@ -1,13 +1,42 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Footer from "../common/Footer/Footer";
-import SubFooter from "../common/SubFooter/SubFooter";
 import SubNavbar from "../common/SubNavbar/SubNavbar";
 import VideoJS from "../common/VideoJS/VideoJS";
 import VideoDetailMoreVideos from "../VideoDetailMoreVideos/VideoDetailMoreVideos";
 import VideoDetailPageContent from "../VideoDetailPageContent/VideoDetailPageContent";
 import style from "./VideoDetailPageComponent.module.css";
-
+import { hasCookie } from "cookies-next";
+import axios from "axios";
 const VideoDetailPageComponent = ({ data }) => {
+  const [suggestedVideo, setSuggestedVideo] = useState([]);
+  const [ storySlug,  setStorySlug ] = useState("")
+ 
+  useEffect(() => {
+    fetchData();
+  }, [data.instructor]);
+
+  const fetchData = async () => {
+    const cookieAvailable = hasCookie("YOUNGSTARS");
+    const URL = cookieAvailable
+      ? "https://cdn.workmob.com/youngstars_workmob"
+      : "https://cdn.workmob.com/stories_workmob";
+
+    const result = await axios(
+      `${URL}/config/instructor/${data.instructor}.json`
+    );
+        
+    const slug = result?.data?.story[0]?.slug; 
+    if (slug) {
+      setStorySlug(slug)      
+    } else{
+      return;
+    }
+    if (result?.data?.gyan && result?.data?.gyan.length > 0) {
+      setSuggestedVideo(result.data.gyan);
+    }
+  };
+
   return (
     <React.Fragment>
       <SubNavbar />
@@ -37,11 +66,11 @@ const VideoDetailPageComponent = ({ data }) => {
         </div>
         <VideoDetailPageContent
           storyHeading={data.storyHeading}
-          storySlug={data.storySlug}
+          storySlug={storySlug}
           fullStory={data.fullStory}
         />
         <VideoDetailMoreVideos
-          instructor={data?.instructor}
+          suggestedVideo={suggestedVideo}
           name={data?.name}
         />
       </div>

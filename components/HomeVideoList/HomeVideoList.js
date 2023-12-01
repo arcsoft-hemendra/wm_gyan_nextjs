@@ -6,8 +6,9 @@ import VideoCard from "../common/VideoCard/VideoCard";
 import style from "./HomeVideoList.module.css";
 
 const HomeVideoList = ({ data }) => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
   const videoList =
-    data.length < 12 && data.length > 7 ? data.slice(0, 6) : data.slice(0, 12);
+    data.length < 12 && data.length > 7 ? data.slice(0, 6) : isMobile ? data.slice(0, 6)   :  data.slice(0, 12);
 
   return (
     <React.Fragment>

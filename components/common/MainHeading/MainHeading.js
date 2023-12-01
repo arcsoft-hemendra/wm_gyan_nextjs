@@ -5,7 +5,7 @@ import style from "./MainHeading.module.css";
 const MainHeading = (props) => {
   return (
     <div className={style.headingContainer}>
-      <h2 className={style.heading}>
+      <h2 className={ props.type === "detail" ? `${style.heading} ${style.detailhead} ` :`${style.heading}`}>
         {props?.title}
         <span className={style.bottomDivider} />
       </h2>

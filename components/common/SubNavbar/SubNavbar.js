@@ -16,30 +16,41 @@ const SubNavbar = (props) => {
           />
         </Link>
       </div>
-    <div>
-      {props.discription && (
-        <div className={style.discriptionContainer}>
-          <h1
-            className={style.discription}
-            dangerouslySetInnerHTML={{ __html: props?.discription }}
-          />
-        </div>
-      )}
+      <div>
+        {props.discription && (
+          <>
+            {props?.page === "insight" ? (
+              <h1 className={style.discriptionContainerInsight}>
+                <span className={style.discriptionInsight}>
+                  Insights &amp; articles on personal, professional and business
+                  digital branding
+                </span>
+              </h1>
+            ) : (
+              <div className={style.discriptionContainer}>
+                <h1
+                  className={style.discription}
+                  dangerouslySetInnerHTML={{ __html: props?.discription }}
+                />
+              </div>
+            )}
+          </>
+        )}
 
-      {props.onChange && (
-        <div className={style.mainSearchContainer}>
-          <div className={style.searchContainer}>
-            <i className={`${style.searchIcon} bi bi-search`}></i>
-            <input
-              className={style.InputBox}
-              placeholder={props.inputPlaceholder}
-              onChange={(e) => props?.onChange(e.target.value)}
-              value={props?.value}
-            />
+        {props.onChange && (
+          <div className={style.mainSearchContainer}>
+            <div className={style.searchContainer}>
+              <i className={`${style.searchIcon} bi bi-search`}></i>
+              <input
+                className={style.InputBox}
+                placeholder={props.inputPlaceholder}
+                onChange={(e) => props?.onChange(e.target.value)}
+                value={props?.value}
+              />
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
     </div>
   );
 };
