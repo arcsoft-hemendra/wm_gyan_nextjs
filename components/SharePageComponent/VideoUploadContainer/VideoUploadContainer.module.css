@@ -2,9 +2,9 @@
   border-radius: 15px;
   width: 244px;
   min-width: 244px;
-  max-width: 314px;
+  max-width: 300px;
   font-family: "Montserrat", sans-serif;
-  background-color: white;
+  background-color: #fff;
   padding: 1.5rem 1rem 1rem 1rem;
   margin: 0 auto;
   width: 100%;
@@ -35,7 +35,7 @@
   color: #828282;
   text-align: center;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 22px;
 }
 
@@ -85,8 +85,8 @@
 }
 
 .btnContainer {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .fileContainer {
@@ -233,14 +233,18 @@
   right: -12px;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .uploadVideoContainer {
     width: 100% !important;
     padding: 20px 10px !important;
     margin: 20px 15px !important;
+    border-radius: 5px; 
   }
-  .kahaniMainDiv {
+  .kahaniMainDiv {  
     margin-top: 1em;
+  }
+  .buttonSubmitKahani{
+    border-radius: 10px;
   }
   .space {
     display: block;

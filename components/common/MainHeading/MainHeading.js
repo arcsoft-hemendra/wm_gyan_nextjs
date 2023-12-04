@@ -5,9 +5,21 @@ import style from "./MainHeading.module.css";
 const MainHeading = (props) => {
   return (
     <div className={style.headingContainer}>
-      <h2 className={ props.type === "detail" ? `${style.heading} ${style.detailhead} ` :`${style.heading}`}>
+      <h2
+        className={
+          props?.page === "videoDetail"
+            ? style.headingResponsive
+            : style.heading
+        }
+      >
         {props?.title}
-        <span className={style.bottomDivider} />
+        <span
+          className={
+            props?.page === "videoDetail"
+              ? style.bottomDividerResponsive
+              : style.bottomDivider
+          }
+        />
       </h2>
       {props?.route && (
         <Link href={`${props?.route}`}>

@@ -112,7 +112,7 @@ function Footer(props) {
           </div>
         </div>
       )}
-
+    <div className={style.footermargin}>
       <div className={style.HomePageFooter}>
         <div className={style.footerMainContainer}>
           <div className={style.footerMiddle}>
@@ -141,6 +141,7 @@ function Footer(props) {
             {gyanJson.textright}
           </p>
         </div>
+      </div>
       </div>
     </React.Fragment>
   );

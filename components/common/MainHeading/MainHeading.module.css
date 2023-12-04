@@ -28,6 +28,26 @@
   cursor: pointer;
   opacity: 0.8;
 }
+.headingResponsive {
+  position: relative;
+  color: #ffffff;
+  font-size: 2vw;
+  text-transform: uppercase;
+  line-height: normal;
+  text-align: left;
+  margin: 2rem 0;
+  font-family: "hp-simplified";
+  font-weight: 700;
+}
+
+.bottomDividerResponsive {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background: #f96332;
+  width: 35px;
+  height: 6px;
+}
 
 @media (max-width: 767px) {
   .heading{
@@ -37,9 +57,19 @@
   .detailhead{
     font-size: 1rem;
   }
-  .bottomDivider{
+  .headingResponsive {
+    font-size: 1rem;
+    margin: revert;
+    padding: 0px 10px;
+  }
+  .bottomDivider {
     height: 4px;
     width: 30px;
+  }
+  .bottomDividerResponsive {
+    height: 4px;
+    width: 30px;
+    margin: 0px 10px;
   }
   .headingContainer{
     padding: 0;

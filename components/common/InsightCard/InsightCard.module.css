@@ -56,11 +56,12 @@
     margin-top: 12px;
     width: 100%;
   }
+
   .insightStoryHeading {
     text-align: start;
     font-size: 1rem;
   }
-  .insightStoryHeadingInner {
+    .insightStoryHeadingInner {
     font-size: 1rem;
   }
 }
