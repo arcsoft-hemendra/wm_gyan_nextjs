@@ -25,8 +25,10 @@ const SharePageComponent = () => {
   };
 
   return (
+    <React.Fragment>
+    <CloseBtn />
     <div className={style.mainContainer}>
-      <CloseBtn />
+      
       <div className={style.subContainer}>
         <VideoUploadContainer />
         <div className={style.videoContainer} onClick={handleVideo}>
@@ -57,6 +59,7 @@ const SharePageComponent = () => {
         </div>
       </div>
     </div>
+    </React.Fragment>
   );
 };
 

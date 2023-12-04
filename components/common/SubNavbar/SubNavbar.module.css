@@ -10,11 +10,13 @@
 .logoImage {
   width: 250px;
 }
-.discriptionContainer {
-  color: #f9d338;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 15px 0;
+.discriptionContainerInsight {
+  font: 3em "hp-simplified", sans-serif;
+  margin:0.5rem auto;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.35em;
+  max-width: 960px;
 }
 
 .discriptionContainerInsight {
@@ -44,11 +46,11 @@
 
 
 .discription {
-  font-family: "hp-simplified";
-  font-weight: bold;
-  font-size: 30px;
+  font-size: 3rem;
+  font-family: 'hp-simplified',sans-serif; 
+  font-weight: normal ;
   line-height: 36px;
-  margin: 0;
+  margin: 0; 
 }
 
 .mainSearchContainer {

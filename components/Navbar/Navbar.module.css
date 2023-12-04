@@ -91,10 +91,13 @@
   cursor: pointer;
 }
 
-.active_tab {
-  position: relative;
+.active_tab, .tab_data:hover {
   color: #f96332;
   font-weight: 700;
+}
+
+.active_tab {
+  position: relative; 
 }
 
 .active_tab::after {

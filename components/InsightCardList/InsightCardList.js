@@ -9,7 +9,8 @@ const InsightCardList = ({ data }) => {
   return (
     <React.Fragment>
       <SubNavbar
-        discription="Browse & discover Gyan videos, expert talks, tips and more from Indian professionals, business owners, startup founders, and more"
+        discription="Insights & articles on personal, professional and business digital branding"
+        page="insight"
       />
       <div className="container">
         <h1 className={style.insighthead}>INSIGHTS</h1>

@@ -331,7 +331,7 @@ const VideoUploadContainer = () => {
               type="submit"
               className={
                 submitBtn.includes("Uploading....")
-                  ? style.buttonSubmitKahaniUpload
+                  ? style.tKahaniUpload
                   : style.buttonSubmitKahani
               }
             >

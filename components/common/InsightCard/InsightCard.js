@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import style from "./InsightCard.module.css";
 
-const InsightCard = (props) => {
+const   InsightCard = (props) => {
   return (
     <div className={style.insightItemDiv} key={props?.index}>
       <Link
