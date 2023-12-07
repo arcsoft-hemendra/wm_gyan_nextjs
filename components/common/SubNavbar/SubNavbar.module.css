@@ -10,18 +10,17 @@
 .logoImage {
   width: 250px;
 }
-.discriptionContainerInsight {
-  font: 3em "hp-simplified", sans-serif;
-  margin:0.5rem auto;
-  text-align: center;
-  position: relative;
-  padding-bottom: 0.35em;
-  max-width: 960px;
+
+.discriptionContainer {
+  color: #f9d338;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 15px 0;
 }
 
 .discriptionContainerInsight {
   font: 3em "hp-simplified", sans-serif;
-  margin:0.5rem auto;
+  margin: 0.5rem auto;
   text-align: center;
   position: relative;
   padding-bottom: 0.35em;
@@ -44,13 +43,12 @@
   color: #e7c822;
 }
 
-
 .discription {
-  font-size: 3rem;
-  font-family: 'hp-simplified',sans-serif; 
-  font-weight: normal ;
+  font-family: "hp-simplified";
+  font-weight: bold;
+  font-size: 30px;
   line-height: 36px;
-  margin: 0; 
+  margin: 0;
 }
 
 .mainSearchContainer {
@@ -63,7 +61,7 @@
   max-width: 610px;
   padding: 0.8rem 1.9rem 1rem 4rem;
   text-align: initial;
-  margin: 1.5rem auto;  
+  margin: 1.5rem auto;
   background: #ffffff1f;
   border-radius: 30px;
   position: relative;

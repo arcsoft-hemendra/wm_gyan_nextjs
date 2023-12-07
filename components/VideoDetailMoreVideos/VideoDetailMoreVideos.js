@@ -18,7 +18,7 @@ const VideoDetailMoreVideos = (props) => {
     <>
       {filterData?.length > 0 && (
         <>
-          <MainHeading title={title} type={"detail"} />
+          <MainHeading title={title} page={"videoDetail"} />
           <div className={style.suggestedVideoContainer}>
             {filterData.map((item, index) => {
               return (
