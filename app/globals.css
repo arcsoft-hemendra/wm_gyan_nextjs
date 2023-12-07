@@ -133,6 +133,7 @@ video {
 /* '' */
 .icon-play::before {
   content: "\e808";
+  margin-top: 0.2em;
 }
 
 /* '' */
