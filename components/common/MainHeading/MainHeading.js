@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import style from "./MainHeading.module.css";
+import { IoIosArrowForward } from "react-icons/io";
 
 const MainHeading = (props) => {
   return (
@@ -23,9 +24,12 @@ const MainHeading = (props) => {
       </h2>
       {props?.route && (
         <Link href={`${props?.route}`}>
-          <i
+          <IoIosArrowForward
+            color="#fff"
+            opacity={0.8}
+            fontSize="1.3rem"
             onClick={props?.onClick}
-            className={`icon icon-right-arrow  ${style.heading} ${style.iconArrow}`}
+            className={`${style.iconArrow}`}
           />
         </Link>
       )}

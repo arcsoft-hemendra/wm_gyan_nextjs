@@ -24,9 +24,10 @@
   height: 6px;
 }
 .iconArrow {
-  font-size: 0.8rem !important;
   cursor: pointer;
   opacity: 0.8;
+  margin: 2rem 0;
+  font-weight: 700;
 }
 .headingResponsive {
   position: relative;
@@ -51,6 +52,10 @@
 
 @media (max-width: 767px) {
   .heading{
+    font-size: 1.3rem;
+    margin: 1rem;
+  }
+  .iconArrow{
     font-size: 1.3rem;
     margin: 1rem;
   }

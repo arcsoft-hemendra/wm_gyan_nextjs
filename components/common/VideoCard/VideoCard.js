@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import style from "./VideoCard.module.css";
+import { IoPlaySharp } from "react-icons/io5";
 
 const VideoCard = (props) => {
   return (
@@ -12,8 +13,8 @@ const VideoCard = (props) => {
           src={props?.video_landscape_thumb}
           alt="thumbnail"
         />
-        <div className={style.playIconContainer}>
-          <i className={`icon icon-play ${style.playIcon}`} />
+        <div className={style.playIconContainer}> 
+        <IoPlaySharp className={style.playIcon} />
         </div>
       </section>
       {props?.storyHeading && (

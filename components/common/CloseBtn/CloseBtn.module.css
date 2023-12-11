@@ -41,6 +41,10 @@
   justify-content: center;
 }
 
+.crossicon{
+  height: 1rem;
+}
+
 @media (max-width: 768px) {
   .waveBtn {
     width: 60px;

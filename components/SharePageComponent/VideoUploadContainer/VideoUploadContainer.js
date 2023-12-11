@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { GoPlus } from "react-icons/go";
 import style from "./VideoUploadContainer.module.css";
 
 const VideoUploadContainer = () => {
@@ -296,16 +296,16 @@ const VideoUploadContainer = () => {
                 id="upload-btn"
                 className={style.inputFile}
               />
-              <label className={style.fileLabel} htmlFor="upload-btn">
-                <i className={`bi bi-plus ${style.plusIcon}`}></i>
+              <label className={style.fileLabel} htmlFor="upload-btn"> 
+                <GoPlus className={style.plusIcon}/>
               </label>
               <span className={style.uploadVideo}>Upload your video</span>
             </div>
             {!!fileName && (
               <div className={style.fileNameContainer}>
-                <label
-                  className={`${style.fileNameLabel} icon icon-plus`}
-                ></label>
+                {/* <label
+                  className={`${style.fileNameLabel} icon`}
+                ></label> */}
                 <p className={style.fileNameTitle}>
                   {fileName}
                   <span onClick={removeFile} className={style.crossIcon}>

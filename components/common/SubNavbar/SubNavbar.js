@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import CloseBtn from "../CloseBtn/CloseBtn";
 import style from "./SubNavbar.module.css";
-
+import { GoSearch } from "react-icons/go";
 const SubNavbar = (props) => {
   return (
     <div>
@@ -38,8 +38,8 @@ const SubNavbar = (props) => {
         )}
          {props.onChange && (
           <div className={style.mainSearchContainer}>
-            <div className={style.searchContainer}>
-              <i className={`${style.searchIcon} bi bi-search`}></i>
+            <div className={style.searchContainer}> 
+              <GoSearch className={style.searchIcon}/> 
               <input
                 className={style.InputBox}
                 placeholder={props.inputPlaceholder}
