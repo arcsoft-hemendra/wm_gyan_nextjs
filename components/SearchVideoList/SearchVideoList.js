@@ -59,6 +59,10 @@ const SearchVideoList = (props) => {
                 key={index}
                 video_landscape_thumb={item?.video_landscape_thumb}
                 slug={item?.slug}
+                storyHeading={item?.storyHeading}
+                category={item?.category}
+                storyType={item?.storyType}
+                showHeading={false}
               />
             );
           })}
@@ -68,7 +72,7 @@ const SearchVideoList = (props) => {
           <p>No Video Available.</p>
         </div>
       )}
-        <Footer dontShowSubFooter={true}/>
+      <Footer dontShowSubFooter={true} />
     </>
   );
 };

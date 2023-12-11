@@ -27,6 +27,9 @@ const VideoDetailMoreVideos = (props) => {
                   video_landscape_thumb={item?.video_landscape_thumb}
                   slug={item?.slug}
                   storyHeading={item?.storyHeading}
+                  category={item?.category}
+                  storyType={item?.storyType}
+                  showHeading={true}
                 />
               );
             })}
