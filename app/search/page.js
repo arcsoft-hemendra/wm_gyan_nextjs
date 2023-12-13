@@ -51,7 +51,21 @@ export const metadata = {
   },
 };
 
-async function getVideosList(URL) {
+async function getVideosListStoriesApi() {
+  const URL = "https://cdn.workmob.com/stories_workmob";
+  const res = await fetch(`${URL}/config/gyan-stories-top.json`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+async function getVideosListYoungApi() {
+  const URL = "https://cdn.workmob.com/youngstars_workmob";
+
   const res = await fetch(`${URL}/config/gyan-stories-top.json`, {
     cache: "no-store",
   });
@@ -63,12 +77,10 @@ async function getVideosList(URL) {
 }
 
 const Search = async () => {
-  const cookieGet = getCookie("YOUNGSTARS", { cookies });
-  const URL = cookieGet
-    ? "https://cdn.workmob.com/youngstars_workmob"
-    : "https://cdn.workmob.com/stories_workmob";
-  const videoData = await getVideosList(URL);
-  return <SearchVideoList data={videoData} />;
+  const getVideosListStories = await getVideosListStoriesApi()
+  const getVideosListYoung = await getVideosListYoungApi()
+
+  return <SearchVideoList getVideosListStories={getVideosListStories} getVideosListYoung={getVideosListYoung} />;
 };
 
 export default Search;

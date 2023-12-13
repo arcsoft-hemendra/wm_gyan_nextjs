@@ -1,18 +1,31 @@
 "use client";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MainHeading from "../common/MainHeading/MainHeading";
 import style from "./CategoryList.module.css";
 import LoaderComponent from "../common/Loader/Loader";
 import ScrollContainer from "react-indiana-drag-scroll";
 import CategoryCard from "../common/CategoryCard/CategoryCard";
+import { UrlContextProvider } from "@/context/UrlContext";
+import { hasCookie } from "cookies-next";
 
-const CategoryList = ({ data }) => {
+const CategoryList = ({ categoryDataStories,categoryDataYoung }) => {
+  const { urlChange } = useContext(UrlContextProvider);
+  const cookieAvailable = hasCookie("YOUNGSTARS");
+  const [categoryData,setCategoryData] = useState([])
+
+  useEffect(() => {
+    setCategoryData(cookieAvailable ? categoryDataYoung : categoryDataStories);
+    return () => {
+      setCategoryData([]);
+    };
+  }, [urlChange]);
+
   return (
     <React.Fragment>
       <MainHeading title="CATEGORIES" route="/categories" />
       <div className={style.categorymain}>
         <div className={style.categoryContainer}>
-          {!data ? (
+          {!categoryData ? (
             <div className={style.loaderHeight}>
               <div className={style.loaderContainer}>
                 <LoaderComponent type={true} />
@@ -21,7 +34,7 @@ const CategoryList = ({ data }) => {
                             
           ) : (
             <>
-              {data
+              {categoryData
                 ?.reverse()
                 .slice(0, 3)
                 ?.map((item, index) => (
@@ -33,7 +46,7 @@ const CategoryList = ({ data }) => {
                 ))}
               <ScrollContainer>
                 <div className={style.mobile_link}>
-                  {data
+                  {categoryData
                     ?.reverse()
                     .slice(0, 3)
                     ?.map((item, index) => (

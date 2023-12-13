@@ -1,14 +1,30 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import SubNavbar from "../common/SubNavbar/SubNavbar";
 import VideoCard from "../common/VideoCard/VideoCard";
 import style from "./SearchVideoList.module.css";
 import Footer from "../common/Footer/Footer";
+import { hasCookie } from "cookies-next";
+import LoaderComponent from "../common/Loader/Loader";
 
 const SearchVideoList = (props) => {
   const [searchVideo, setSearchVideo] = useState("");
+  const [videoData, setVideoData] = useState([]);
   const [paginateData, setPaginateData] = useState(12);
-  const videoListLength = useRef(props.data.length);
+  const [loading, setLoading] = useState(true);
+  const videoListLength = useRef();
+  const cookieAvailable = hasCookie("YOUNGSTARS");
+
+  useEffect(() => {
+    setLoading(true);
+    setVideoData(
+      cookieAvailable ? props.getVideosListYoung : props.getVideosListStories
+    );
+    videoListLength.current = cookieAvailable
+      ? props.getVideosListYoung.length
+      : props.getVideosListStories.length;
+    setLoading(false);
+  }, []);
 
   // Handling scroller
   useEffect(() => {
@@ -27,7 +43,7 @@ const SearchVideoList = (props) => {
     };
   }, [paginateData]);
 
-  const filteredDataVideo = props.data
+  const filteredDataVideo = videoData
     .filter((cate) => {
       if (searchVideo === "") {
         return cate;
@@ -42,6 +58,10 @@ const SearchVideoList = (props) => {
       }
     })
     .slice(0, paginateData);
+
+  if (loading) {
+    return <LoaderComponent />;
+  }
 
   return (
     <>
