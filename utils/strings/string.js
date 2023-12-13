@@ -5,7 +5,7 @@ export const HomepageData = {
     "Watch and learn from expert talks and knowledge videos on topics such as yoga, meditation, fitness, dance, english, history, health, technology, and more.",
   applicationName: "https://gyan.workmob.com/",
   hostName: "https://gyan.workmob.com",
-  ogImage:""
+  ogImage:"https://cdn.workmob.com/stories_workmob/images/common/gyan.png"
 };
 
 export const CategoriespageData = {
@@ -15,7 +15,7 @@ export const CategoriespageData = {
   applicationName: "https://gyan.workmob.com/",
   hostName: "https://gyan.workmob.com",
   url: "https://gyan.workmob.com/share",
-  ogImage:""
+  ogImage:"https://cdn.workmob.com/stories_workmob/images/common/gyan.png"
 };
 
 export const SearchpageData = {
@@ -25,7 +25,7 @@ export const SearchpageData = {
   applicationName: "https://gyan.workmob.com/",
   hostName: "https://gyan.workmob.com",
   url: "https://gyan.workmob.com/search",
-  ogImage:""
+  ogImage:"https://cdn.workmob.com/stories_workmob/images/common/gyan.png"
 };
 
 export const SharepageData = {
@@ -36,7 +36,7 @@ export const SharepageData = {
   applicationName: "https://gyan.workmob.com/",
   hostName: "https://gyan.workmob.com",
   url: "https://gyan.workmob.com/share",
-  ogImage:""
+  ogImage:"https://cdn.workmob.com/stories_workmob/images/common/gyan.png"
 };
 
 export const InsightspageData = {
@@ -46,5 +46,5 @@ export const InsightspageData = {
   applicationName: "https://gyan.workmob.com/",
   hostName: "https://gyan.workmob.com",
   url: "https://gyan.workmob.com/insights",
-  ogImage:""
+  ogImage:"https://cdn.workmob.com/stories_workmob/images/common/gyan.png"
 };

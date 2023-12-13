@@ -12,7 +12,7 @@ export async function generateMetadata({ params: { id } }) {
   const description = `Watch ${category} expert talk videos by India's own Gyan Gurus. Learn from India's own professional community and youngstars in the field of ${category}. Grow your skills.`;
 
   const HOSTNAME = `https://gyan.workmob.com`;
-  const ogImage = ""
+  const ogImage = "https://cdn.workmob.com/stories_workmob/images/common/gyan.png"
 
   return {
     title: title,
