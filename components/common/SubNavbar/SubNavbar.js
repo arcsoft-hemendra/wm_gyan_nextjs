@@ -22,8 +22,7 @@ const SubNavbar = (props) => {
             {props?.page === "insight" ? (
               <h1 className={style.discriptionContainerInsight}>
                 <span className={style.discriptionInsight}>
-                  Insights &amp; articles on personal, professional and business
-                  digital branding
+                  {props?.discription}
                 </span>
               </h1>
             ) : (
@@ -36,10 +35,10 @@ const SubNavbar = (props) => {
             )}
           </>
         )}
-         {props.onChange && (
+        {props.onChange && (
           <div className={style.mainSearchContainer}>
-            <div className={style.searchContainer}> 
-              <GoSearch className={style.searchIcon}/> 
+            <div className={style.searchContainer}>
+              <GoSearch className={style.searchIcon} />
               <input
                 className={style.InputBox}
                 placeholder={props.inputPlaceholder}
@@ -49,7 +48,7 @@ const SubNavbar = (props) => {
             </div>
           </div>
         )}
-    </div>
+      </div>
     </div>
   );
 };

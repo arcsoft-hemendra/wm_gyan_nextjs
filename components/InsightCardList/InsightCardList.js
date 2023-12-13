@@ -9,11 +9,11 @@ const InsightCardList = ({ data }) => {
   return (
     <React.Fragment>
       <SubNavbar
-        discription="Insights & articles on personal, professional and business digital branding"
+        discription="Insights & articles on sharing knowledge, ideas & learning"
         page="insight"
       />
       <div className="container">
-        <h1 className={style.insighthead}>INSIGHTS</h1>
+        <h2 className={style.insighthead}>INSIGHTS</h2>
         <div className={style.insightMain_div}>
           {data?.map((item, index) => (
             <InsightCard item={item} key={index} page="insight" />

@@ -46,7 +46,7 @@ const SearchVideoList = (props) => {
   return (
     <>
       <SubNavbar
-        discription="Search Gyan videos from Indian <br/> professionals, business owners, startup founders, and more"
+        discription="Search Gyan videos from Indian professionals, business owners, startup founders, youngstars, and more"
         inputPlaceholder="Search by name"
         value={searchVideo}
         onChange={setSearchVideo}

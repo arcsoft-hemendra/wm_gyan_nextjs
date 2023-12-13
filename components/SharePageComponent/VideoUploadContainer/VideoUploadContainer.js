@@ -255,14 +255,13 @@ const VideoUploadContainer = () => {
   return (
     <div>
       <div className={style.uploadVideoContainer}>
-        <h3 className={style.title}>
+        <h1 className={style.title}>
           GYANMANCH
           <p className={style.titleInner}>Bharat ke apne Gyan Guru</p>
-        </h3>
-        <p className={style.subTitle}>
-          Upload your expert video or submit your contact details and we will
-          set up a time to record your story.
-        </p>
+        </h1>
+        <h2 className={style.subTitle}>
+        Upload your expert video. Or share your contact details and we will help create your Gyan video.
+        </h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className={style.inputNameContainer}>
             <input

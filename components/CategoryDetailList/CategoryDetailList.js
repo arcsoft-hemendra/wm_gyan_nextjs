@@ -29,7 +29,9 @@ const CategoryDetailList = (props) => {
 
   return (
     <div>
-      <SubNavbar />
+      <SubNavbar
+        discription={`${props.category} Expert Talks & Learning Videos. Learn from India's own professional community and youngstars in the field of ${props.category}. Grow your skills.`}
+      />
       {videoList?.length > 0 ? (
         <div className={style.videoContainer}>
           {videoList.map((item, index) => {

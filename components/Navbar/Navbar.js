@@ -57,9 +57,9 @@ const Navbar = () => {
     return (
       <div className={style.navcontainer}>
         <div className={style.header} ref={headerRef}>
-          <a className={style.headlogo} href="/">
+          <Link className={style.headlogo} href="/">
             <img src={WorkmobLogo.image} alt={WorkmobLogo} />
-          </a>
+          </Link>
           <nav className={style.navbarMain}>
             <div className={style.head_tab}>
               <div

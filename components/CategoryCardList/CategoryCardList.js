@@ -39,7 +39,7 @@ const CategoryCardList = (props) => {
   return (
     <div>
       <SubNavbar
-        discription="Browse & discover Gyan videos, expert talks, tips and more from Indian professionals, business owners, startup founders, and more"
+        discription="Browse & discover Gyan videos, expert talks, tips and more from Indian professionals, business owners, startup founders, youngstars, and more"
         inputPlaceholder="Search Category"
         onChange={setCategorySearch}
         value={categorySearch}

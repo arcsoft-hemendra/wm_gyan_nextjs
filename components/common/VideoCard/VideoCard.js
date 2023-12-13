@@ -30,10 +30,10 @@ const VideoCard = (props) => {
         <img
           className={style.mainCardImage}
           src={props?.video_landscape_thumb}
-          alt="thumbnail"
+          alt={props.slug}
         />
-        <div className={style.playIconContainer}> 
-        <IoPlaySharp className={style.playIcon} />
+        <div className={style.playIconContainer}>
+          <IoPlaySharp className={style.playIcon} />
         </div>
       </section>
       {props?.showHeading && (

@@ -6,22 +6,42 @@ import { IoIosArrowForward } from "react-icons/io";
 const MainHeading = (props) => {
   return (
     <div className={style.headingContainer}>
-      <h2
-        className={
-          props?.page === "videoDetail"
-            ? style.headingResponsive
-            : style.heading
-        }
-      >
-        {props?.title}
-        <span
+      {props?.title === "Gyan Videos" ? (
+        <h1
           className={
             props?.page === "videoDetail"
-              ? style.bottomDividerResponsive
-              : style.bottomDivider
+              ? style.headingResponsive
+              : style.heading
           }
-        />
-      </h2>
+        >
+          {props?.title}
+          <span
+            className={
+              props?.page === "videoDetail"
+                ? style.bottomDividerResponsive
+                : style.bottomDivider
+            }
+          />
+        </h1>
+      ) : (
+        <h2
+          className={
+            props?.page === "videoDetail"
+              ? style.headingResponsive
+              : style.heading
+          }
+        >
+          {props?.title}
+          <span
+            className={
+              props?.page === "videoDetail"
+                ? style.bottomDividerResponsive
+                : style.bottomDivider
+            }
+          />
+        </h2>
+      )}
+
       {props?.route && (
         <Link href={`${props?.route}`}>
           <IoIosArrowForward

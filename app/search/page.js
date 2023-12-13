@@ -2,6 +2,54 @@ import React from "react";
 import SearchVideoList from "./../../components/SearchVideoList/SearchVideoList";
 import { getCookie } from "cookies-next";
 import { cookies } from "next/headers";
+import { SearchpageData } from "@/utils/strings/string";
+
+export const metadata = {
+  title: SearchpageData.title,
+  description: SearchpageData.description,
+  applicationName: SearchpageData.applicationName,
+  metadataBase: new URL("https://gyan.workmob.com"),
+  referrer: "origin-when-cross-origin",
+  openGraph: {
+    title: SearchpageData.title,
+    description: SearchpageData.description,
+    url: SearchpageData.url,
+    siteName: SearchpageData.hostName,
+    images: [
+      {
+        url: SearchpageData.ogImage,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: SearchpageData.ogImage,
+        width: 1800,
+        height: 1600,
+        alt: SearchpageData.title,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SearchpageData.title,
+    description: SearchpageData.description,
+    creator: "@Workmob",
+    images: {
+      url: SearchpageData.ogImage,
+      alt: SearchpageData.url,
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
+  alternates: {
+    canonical: SearchpageData.url,
+  },
+};
 
 async function getVideosList(URL) {
   const res = await fetch(`${URL}/config/gyan-stories-top.json`, {
