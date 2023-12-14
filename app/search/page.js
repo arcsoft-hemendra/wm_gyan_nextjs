@@ -1,7 +1,5 @@
 import React from "react";
 import SearchVideoList from "./../../components/SearchVideoList/SearchVideoList";
-import { getCookie } from "cookies-next";
-import { cookies } from "next/headers";
 import { SearchpageData } from "@/utils/strings/string";
 
 export const metadata = {

@@ -1,7 +1,5 @@
 import React from "react";
 import CategoryCardList from "./../../components/CategoryCardList/CategoryCardList";
-import { getCookie } from "cookies-next";
-import { cookies } from "next/headers";
 import { CategoriespageData } from "@/utils/strings/string";
 
 export const metadata = {

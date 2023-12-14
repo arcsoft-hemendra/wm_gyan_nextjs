@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UrlContextProvider } from "@/context/UrlContext";
 import LoaderComponent from "../common/Loader/Loader";
 import MainHeading from "../common/MainHeading/MainHeading";

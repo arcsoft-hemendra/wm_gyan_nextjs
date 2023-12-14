@@ -50,7 +50,7 @@ const HeroSection = () => {
     <>
       {loader ? (
         <div className={style.videoBackgroundLayout}>
-          {/* <LoaderComponent /> */}
+          <LoaderComponent />
         </div>
       ) : (
         <div
