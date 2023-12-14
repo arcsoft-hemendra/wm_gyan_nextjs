@@ -47,8 +47,8 @@ const Navbar = () => {
     } else {
       deleteCookie("YOUNGSTARS");
     }
-    // window.location.reload();
     setUrlChange(!urlChange);
+    window?.scrollTo(0, 0);
   };
 
   useEffect(() => {

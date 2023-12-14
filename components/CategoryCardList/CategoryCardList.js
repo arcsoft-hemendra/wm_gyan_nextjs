@@ -5,17 +5,25 @@ import SubNavbar from "../common/SubNavbar/SubNavbar";
 import style from "./CategoryCardList.module.css";
 import Footer from "../common/Footer/Footer";
 import LoaderComponent from "../common/Loader/Loader";
+import { hasCookie } from "cookies-next";
 
 const CategoryCardList = (props) => {
   const [categorySearch, setCategorySearch] = useState("");
-
+  const [categoryData, setCategoryData] = useState([]);
+  const cookieAvailable = hasCookie("YOUNGSTARS");
   const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setCategoryData(
+      cookieAvailable ? props.categoryDataYoung : props.categoryDataStories
+    );
+  }, []);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const filteredCategoryData = props.data.filter((cate) => {
+  const filteredCategoryData = categoryData.filter((cate) => {
     if (categorySearch === "") {
       return cate;
     } else {
@@ -50,8 +58,8 @@ const CategoryCardList = (props) => {
             <div
               className={
                 categorySearch.length === 0
-                ? style.categoriesFlex
-                : style.displayNone
+                  ? style.categoriesFlex
+                  : style.displayNone
               }
             >
               {[...filteredCategoryData]
@@ -63,6 +71,11 @@ const CategoryCardList = (props) => {
                       category={category.category}
                       key={index}
                       type={false}
+                      URL={
+                        cookieAvailable
+                          ? "https://cdn.workmob.com/youngstars_workmob"
+                          : "https://cdn.workmob.com/stories_workmob"
+                      }
                     />
                   );
                 })}
@@ -77,6 +90,11 @@ const CategoryCardList = (props) => {
                         category={category.category}
                         key={index}
                         type={false}
+                        URL={
+                          cookieAvailable
+                            ? "https://cdn.workmob.com/youngstars_workmob"
+                            : "https://cdn.workmob.com/stories_workmob"
+                        }
                       />
                     ))
                 : null}
@@ -88,7 +106,7 @@ const CategoryCardList = (props) => {
           </div>
         )}
       </div>
-      
+
       <Footer dontShowSubFooter={true} />
     </div>
   );

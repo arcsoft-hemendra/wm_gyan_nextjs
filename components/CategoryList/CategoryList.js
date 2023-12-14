@@ -8,10 +8,10 @@ import CategoryCard from "../common/CategoryCard/CategoryCard";
 import { UrlContextProvider } from "@/context/UrlContext";
 import { hasCookie } from "cookies-next";
 
-const CategoryList = ({ categoryDataStories,categoryDataYoung }) => {
+const CategoryList = ({ categoryDataStories, categoryDataYoung }) => {
   const { urlChange } = useContext(UrlContextProvider);
   const cookieAvailable = hasCookie("YOUNGSTARS");
-  const [categoryData,setCategoryData] = useState([])
+  const [categoryData, setCategoryData] = useState([]);
 
   useEffect(() => {
     setCategoryData(cookieAvailable ? categoryDataYoung : categoryDataStories);
@@ -19,6 +19,7 @@ const CategoryList = ({ categoryDataStories,categoryDataYoung }) => {
       setCategoryData([]);
     };
   }, [urlChange]);
+
 
   return (
     <React.Fragment>
@@ -30,8 +31,7 @@ const CategoryList = ({ categoryDataStories,categoryDataYoung }) => {
               <div className={style.loaderContainer}>
                 <LoaderComponent type={true} />
               </div>
-            </div> 
-                            
+            </div>
           ) : (
             <>
               {categoryData
@@ -42,6 +42,11 @@ const CategoryList = ({ categoryDataStories,categoryDataYoung }) => {
                     category={item.category}
                     key={index}
                     type="web"
+                    URL={
+                      cookieAvailable
+                        ? "https://cdn.workmob.com/youngstars_workmob"
+                        : "https://cdn.workmob.com/stories_workmob"
+                    }
                   />
                 ))}
               <ScrollContainer>
@@ -54,6 +59,11 @@ const CategoryList = ({ categoryDataStories,categoryDataYoung }) => {
                         category={item.category}
                         key={index}
                         type="mobile"
+                        URL={
+                          cookieAvailable
+                            ? "https://cdn.workmob.com/youngstars_workmob"
+                            : "https://cdn.workmob.com/stories_workmob"
+                        }
                       />
                     ))}
                 </div>
