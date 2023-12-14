@@ -1,12 +1,14 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import VideoJS from "../common/VideoJS/VideoJS";
 import { hasCookie } from "cookies-next";
 import LoaderComponent from "../common/Loader/Loader";
 import { youngstarVideo, karmyogisVideo } from "./HeroSectionData";
 import style from "./HeroSection.module.css";
+import { UrlContextProvider } from "@/context/UrlContext";
 
 const HeroSection = () => {
+  const { urlChange } = useContext(UrlContextProvider);
   const [youngVideo, setYoungVideo] = useState({});
   const [karmyogiVideo, setKarmYogiVideo] = useState({});
   const [playVideo, setPlayVideo] = useState(true);
@@ -25,7 +27,7 @@ const HeroSection = () => {
       setYoungVideo({});
       setLoader(false);
     }
-  }, []);
+  }, [urlChange]);
 
   // Handling the play and pause of header video
   useEffect(() => {

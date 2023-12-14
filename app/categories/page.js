@@ -51,7 +51,20 @@ export const metadata = {
   },
 };
 
-async function getCategoryList(URL) {
+async function getCategoryListStories() {
+  const URL = "https://cdn.workmob.com/stories_workmob"
+  const res = await fetch(`${URL}/config/gyan-category.json`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+async function getCategoryListYoung() {
+  const URL = "https://cdn.workmob.com/youngstars_workmob"
   const res = await fetch(`${URL}/config/gyan-category.json`, {
     cache: "no-store",
   });
@@ -63,12 +76,10 @@ async function getCategoryList(URL) {
 }
 
 const Categories = async () => {
-  const cookieGet = getCookie("YOUNGSTARS", { cookies });
-  const URL = cookieGet
-    ? "https://cdn.workmob.com/youngstars_workmob"
-    : "https://cdn.workmob.com/stories_workmob";
-  const categoryData = await getCategoryList(URL);
-  return <CategoryCardList data={categoryData} />;
+  const categoryDataStories = await getCategoryListStories();
+  const categoryDataYoung = await getCategoryListYoung();
+
+  return <CategoryCardList categoryDataStories={categoryDataStories} categoryDataYoung={categoryDataYoung}/>;
 };
 
 export default Categories;

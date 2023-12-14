@@ -26,10 +26,9 @@ const SubFooter = dynamic(
     ssr: false,
   }
 );
-import { getCookie } from "cookies-next";
-import { cookies } from "next/headers";
 
-async function getVideosList(URL) {
+async function getVideosListStories() {
+  const URL = "https://cdn.workmob.com/stories_workmob";
   const res = await fetch(`${URL}/config/gyan-stories-top.json`, {
     cache: "no-store",
   });
@@ -40,7 +39,32 @@ async function getVideosList(URL) {
   return res.json();
 }
 
-async function getCategoryList(URL) {
+async function getVideosListYoungstar() {
+  const URL = "https://cdn.workmob.com/youngstars_workmob";
+  const res = await fetch(`${URL}/config/gyan-stories-top.json`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+async function getCategoryListStories() {
+  const URL = "https://cdn.workmob.com/stories_workmob";
+  const res = await fetch(`${URL}/config/gyan-category.json`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+async function getCategoryListYoungstar() {
+  const URL = "https://cdn.workmob.com/youngstars_workmob";
   const res = await fetch(`${URL}/config/gyan-category.json`, {
     cache: "no-store",
   });
@@ -67,20 +91,25 @@ async function getInsightList() {
 }
 
 export default async function Home() {
-  const cookieGet = getCookie("YOUNGSTARS", { cookies });
-  const URL = cookieGet
-    ? "https://cdn.workmob.com/youngstars_workmob"
-    : "https://cdn.workmob.com/stories_workmob";
-  const videoData = await getVideosList(URL);
-  const categoryData = await getCategoryList(URL);
+  const videoDataStories = await getVideosListStories();
+  const videoDataYoung = await getVideosListYoungstar();
+  const categoryDataStories = await getCategoryListStories();
+  const categoryDataYoung = await getCategoryListYoungstar();
   const insightData = await getInsightList();
+
   return (
     <main>
       <Navbar />
       <HeroSection />
       <div className="container">
-        <HomeVideoList data={videoData} />
-        <CategoryList data={categoryData} />
+        <HomeVideoList
+          videoDataStories={videoDataStories}
+          videoDataYoung={videoDataYoung}
+        />
+        <CategoryList
+          categoryDataStories={categoryDataStories}
+          categoryDataYoung={categoryDataYoung}
+        />
         <InsightList data={insightData} />
       </div>
       <Footer />

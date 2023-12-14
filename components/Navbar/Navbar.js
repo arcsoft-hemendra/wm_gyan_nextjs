@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState, useContext } from "react";
 import style from "./Navbar.module.css";
 import { useRef } from "react";
 import { WorkmobLogo } from "./NavBarData";
@@ -7,14 +7,16 @@ import Dropdown from "react-dropdown";
 import Link from "next/link";
 import { setCookie, deleteCookie, hasCookie } from "cookies-next";
 import "react-dropdown/style.css";
+import { UrlContextProvider } from "@/context/UrlContext";
 
 const Navbar = () => {
   const cookieAvailable = hasCookie("YOUNGSTARS");
-  const defaultOption = cookieAvailable ?  "YOUNGSTARS"  : "KARMYOGIS";
+  const defaultOption = cookieAvailable ? "YOUNGSTARS" : "KARMYOGIS";
   const options = ["KARMYOGIS", "YOUNGSTARS"];
   const [activeTabChange, setActiveTabChange] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const headerRef = useRef();
+  const { urlChange, setUrlChange } = useContext(UrlContextProvider);
 
   useEffect(() => {
     let isThrottle;
@@ -45,13 +47,13 @@ const Navbar = () => {
     } else {
       deleteCookie("YOUNGSTARS");
     }
-    window.location.reload();
+    setUrlChange(!urlChange);
+    window?.scrollTo(0, 0);
   };
 
   useEffect(() => {
     setIsClient(true);
   }, [activeTabChange]);
-
 
   if (isClient) {
     return (

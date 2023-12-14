@@ -1,6 +1,7 @@
 import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { HomepageData } from "@/utils/strings/string";
+import UrlContext from "@/context/UrlContext";
 
 export const metadata = {
   title: HomepageData.title,
@@ -52,7 +53,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <UrlContext>{children}</UrlContext>
+      </body>
     </html>
   );
 }
